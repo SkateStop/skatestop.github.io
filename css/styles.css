@@ -4,19 +4,34 @@ body{
 }
 .topNavbar{
     background-color: #011328;
+    min-height: 10vh;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
 }
 .loginLink{
     text-decoration: none;
     padding: 10px;
     color: white;
     float: right;
-    margin-top: 1rem;
+    margin-top: 2.5vh;
 }.loginLink:hover{
     color: grey;
 }
 
-.logo{
-    height: 50px;
-    width: 50px;
-    padding: 10px;
+.mainBody{
+    display: flex;
+}
+.infoPanel{
+    background-color: grey;
+    height: 200px;
+    min-width: 25vw;
+    margin: 0px;
+    min-height: 90vh;
+}
+
+.map{
+    min-width: 75vw;
 }
