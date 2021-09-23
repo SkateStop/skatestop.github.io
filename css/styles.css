@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.topNavbar{
+    background-color: #011328;
+}
+.loginLink{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    float: right;
+    margin-top: 1rem;
+}.loginLink:hover{
+    color: grey;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+}
