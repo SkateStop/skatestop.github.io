@@ -9,14 +9,17 @@ body{
 .logo{
     height: 50px;
     width: 50px;
-    padding: 10px;
+    padding: 8.3px;
+    position: relative;
+    top: 5px
 }
 .loginLink{
     text-decoration: none;
     padding: 10px;
     color: white;
     float: right;
-    margin-top: 2.5vh;
+    margin-top: 2.2vh;
+    margin-bottom: 2.2vh;
 }.loginLink:hover{
     color: grey;
 }
@@ -32,6 +35,6 @@ body{
     min-height: 90vh;
 }
 
-.map{
+#map{
     min-width: 75vw;
 }

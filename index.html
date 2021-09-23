@@ -2,12 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <script src="./index.js"></script>
         <title>SkateStop</title>
     </head>
-    <body>
+    <body style="font-family: 'Nunito', sans-serif;">
         <div class="topNavbar">
-            <img src="images/skatestoplogo_w.png" class="logo">
+            <a href="index.html">
+                <img src="images/skatestoplogo_w.png" alt="logo" class="logo">
+            </a>
             <a href="logIn.html" class="loginLink">Sign Up</a>
             <a href="logIn.html" class="loginLink">Log In</a>
         </div>
@@ -15,9 +22,12 @@
             <div class="infoPanel">
 
             </div>
-            <div class="map">
+            <div id="map">
 
             </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGpyKJHy75zcI9EfAGqU4cDpvg_RhXXjE&callback=initMap&v=weekly"
+                    async
+            ></script>
         </div>
     </body>
 </html>
