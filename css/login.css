@@ -15,11 +15,13 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: #808080;
 }
 
-.logIn-div{
-    justify-content: center;
+#logIn {
+    background-color: #021327;
+    text-align: center;
+    color: white;
 }
 
 .form-signin {
