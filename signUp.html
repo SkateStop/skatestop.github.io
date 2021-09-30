@@ -6,7 +6,7 @@
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="UTF-8">
-    <link href="css/login.css" rel="stylesheet">
+    <link href="css/signUp.css" rel="stylesheet">
     <title>SkateStop</title>
   </head>
   <body class="text-center">
@@ -20,20 +20,18 @@
     
     <button type="button">Log In</button> -->
 
-    <div id="logIn">
+    <div id="signUp">
     <form class="form-signin">
       <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal" >Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal" >Sign Up</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" style="">Sign in</button>
+      <label for="confirmPassword" class="sr-only">Confirm Password</label>
+      <input type="password" id="confirmPassword" class="form-control" placeholder="confirmPassword" required>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit" style="">Sign up</button>
       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </form>
     </div>
