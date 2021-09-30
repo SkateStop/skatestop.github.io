@@ -16,12 +16,14 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #808080;
+  font-family: 'Nunito', sans-serif
 }
 
 #logIn {
-    background-color: #021327;
-    text-align: center;
-    color: white;
+  border-radius: 25px;
+  background-color: #021327;
+  text-align: center;
+  color: white;
 }
 
 .form-signin {
