@@ -29,6 +29,7 @@ body{
 }
 .infoPanel{
     background-color: grey;
+    color: white;
     height: 200px;
     min-width: 23vw;
     margin: 0px;
@@ -39,6 +40,13 @@ body{
     min-height: 86vh;
     text-align: center;
     overflow-y: scroll;
+}.spotPhoto{
+    height: 30%;
+    width: 75%;
+}.photoSlides{
+    display: none;
+}.prev, .next{
+    cursor: pointer;
 }
 
 .location{

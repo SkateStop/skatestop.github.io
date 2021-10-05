@@ -7,7 +7,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <script src="./index.js"></script>
         <title>SkateStop</title>
     </head>
     <body style="font-family: 'Nunito', sans-serif;">
@@ -20,12 +19,40 @@
         </div>
         <div class="mainBody">
             <div class="infoPanel">
+
                 <a href="location.html" class="location">Add Location</a>
+                <h1>Glasgow Park</h1>
+
+                <div class="slideshow-container">
+                    <div class="photoSlides">
+                        <img src="images/glasgow/glasgow1.jpg" class="spotPhoto">
+                    </div>
+
+                    <div class="photoSlides">
+                        <img src="images/glasgow/glasgow2.jpg" class="spotPhoto">
+                    </div>
+
+                    <div class="photoSlides">
+                        <img src="images/glasgow/glasgow3.jpg" class="spotPhoto">
+                    </div>
+
+                    <div class="photoSlides">
+                        <img src="images/glasgow/glasgow4.jpg" class="spotPhoto">
+                    </div>
+
+                    <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlide(1)">&#10095;</a>
+                </div>
+
             </div>
+
             <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGpyKJHy75zcI9EfAGqU4cDpvg_RhXXjE&callback=initMap&v=weekly"
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApjYIbQSIoRLNps9A1Mx3ZoVr6NdZD3xw&callback=initMap&v=weekly"
                     async
             ></script>
         </div>
+        
+        <script src="js/index.js"></script>
+        <script src="js/carousel.js"></script>
     </body>
 </html>
