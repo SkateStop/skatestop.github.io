@@ -45,12 +45,38 @@ body {
     z-index: 2;
 }
 .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
+/*     margin-bottom: 10px;
+ */    border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
+/*     margin-bottom: 10px;
+ */    border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.form-signin input[type="text"] {
+    /* margin-bottom: 10px; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+/*     margin-right: 20px;
+ */}
+.g-signin2{
+    width: 100%;
+}
+.g-signin2 > div{
+    margin: 0 auto;
+}
+button[type="submit"]{
+    background-color: #021327;
+    border: 2px solid white;
+    padding: 10px;
+    border: 0px;
+    margin: 10px;
+    font-size: 16px;
+    transition: 0.4s;
+    color: white
+  }
+  button[type="submit"]:hover{
+    background-color: white; /* Green */
+    color: black;
+  }
