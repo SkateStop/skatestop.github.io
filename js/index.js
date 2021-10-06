@@ -40,7 +40,16 @@ function initMap() {
       document.getElementById("locationTitle").innerText = "Phillips Park";
       document.getElementById("locationNavbar").style.display = "block";
     });
-
+    handloff.addListener("click", () =>{
+      content.innerHTML = '<img src="images/handloff/handloff1.jpg" class="spotPhoto"><img src="images/handloff/handloff2.jpg" class="spotPhoto"><img src="images/handloff/handloff3.jpg" class="spotPhoto">';
+      document.getElementById("locationTitle").innerText = "Handloff Park";
+      document.getElementById("locationNavbar").style.display = "block";
+    });
+    barnes.addListener("click", () =>{
+      content.innerHTML = '<img src="images/barnes/barnes1.jpg" class="spotPhoto"><img src="images/barnes/barnes3.jpg" class="spotPhoto">';
+      document.getElementById("locationTitle").innerText = "Barnes & Noble";
+      document.getElementById("locationNavbar").style.display = "block";
+    });
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
