@@ -5,22 +5,22 @@ body{
 .topNavbar{
     background-color: #011328;
     min-height: 10vh;
-}
-.logo{
+}.logo{
     height: 50px;
     width: 50px;
     padding: 8.3px;
     position: relative;
-    top: 5px
-}
-.loginLink{
+    top: 5px;
+}.loginLink, .location{
     text-decoration: none;
     padding: 10px;
     color: white;
-    float: right;
     margin-top: 2.2vh;
     margin-bottom: 2.2vh;
-}.loginLink:hover{
+    float: right;
+}.navbarLeft{
+    float: left;
+}.loginLink:hover, .location:hover{
     color: grey;
 }
 
@@ -31,34 +31,47 @@ body{
     background-color: grey;
     color: white;
     height: 200px;
-    min-width: 23vw;
+    min-width: 25vw;
     margin: 0px;
-    padding-top: 2vh;
+    /* padding-top: 2vh;
     padding-bottom: 2vh;
     padding-left: 1vw;
-    padding-right: 1vw;
-    min-height: 86vh;
+    padding-right: 1vw; */
+    min-height: 90vh;
     text-align: center;
     overflow-y: scroll;
+}#locationTitle{
+    background-color: #424242;
+    margin: 0;
+}.navbarDispaly{
+    object-fit: contain;
+}.locationNavbar{
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}.sideNavButtons{
+    color: white;
+    font-size: large;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
+    background: none;
+}.sideNavButtons:hover{
+    background-color: #424242;
+    border-radius: 5px;
 }.spotPhoto{
-    height: 30%;
-    width: 75%;
-}.photoSlides{
-    display: none;
-}.prev, .next{
+    width: 100%;
+}.directionButton{
+    background-color: grey;
+    color: white;
+    border: 2px solid #424242;
+    padding: 5px;
+    margin-top: 30vh;
+}.directionButton:hover{
+    background-color: #424242;
     cursor: pointer;
 }
 
-.location{
-    text-decoration: none;
-    color: white;
-    padding: 4px;
-    font-size: 25px;
-    border: 2px solid #2c2c2c;
-    border-radius: 5px;
-}.location:hover{
-    background-color: #2c2c2c;
-}
 #map{
     min-width: 75vw;
 }

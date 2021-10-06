@@ -11,39 +11,44 @@
     </head>
     <body style="font-family: 'Nunito', sans-serif;">
         <div class="topNavbar">
+            <div class="navbarLeft">
             <a href="index.html">
                 <img src="images/skatestoplogo_w.png" alt="logo" class="logo">
             </a>
+            <a href="location.html" class="location">Add Location</a>
+            </div>
             <a href="signUp.html" class="loginLink">Sign Up</a>
             <a href="logIn.html" class="loginLink">Log In</a>
         </div>
+
         <div class="mainBody">
             <div class="infoPanel">
 
-                <a href="location.html" class="location">Add Location</a>
-                <h1>Glasgow Park</h1>
+                <h1 id="locationTitle" class="locationNavbar">Click a marker to get started</h1>
 
-                <div class="slideshow-container">
-                    <div class="photoSlides">
-                        <img src="images/glasgow/glasgow1.jpg" class="spotPhoto">
-                    </div>
-
-                    <div class="photoSlides">
-                        <img src="images/glasgow/glasgow2.jpg" class="spotPhoto">
-                    </div>
-
-                    <div class="photoSlides">
-                        <img src="images/glasgow/glasgow3.jpg" class="spotPhoto">
-                    </div>
-
-                    <div class="photoSlides">
-                        <img src="images/glasgow/glasgow4.jpg" class="spotPhoto">
-                    </div>
-
-                    <a class="prev" onclick="plusSlide(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlide(1)">&#10095;</a>
+                <div id="locationNavbar" class="locationNavbar" style="display: none;">
+                    <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
+                    <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
+                    <input type="button" value="Reviews" class="sideNavButtons" id="reviewBtn">
+                    <input type="button" value="Directions" class="sideNavButtons" id="dirBtn">
                 </div>
 
+                <div class="navbarDisplay">
+                    <!-- PICTURES -->
+                    <!-- <img src="images/glasgow/glasgow1.jpg" class="spotPhoto">
+                    <img src="images/glasgow/glasgow2.jpg" class="spotPhoto">
+                    <img src="images/glasgow/glasgow3.jpg" class="spotPhoto">
+                    <img src="images/glasgow/glasgow5.jpg" class="spotPhoto">
+                    <img src="images/glasgow/glasgow4.jpg" class="spotPhoto"> -->
+
+                    <!-- VIDEOS -->
+                    <!-- <video class="spotPhoto" src="images/glasgow/clip1.mp4" controls muted></video>
+                    <video class="spotPhoto" src="images/glasgow/clip3.mp4" controls muted></video> -->
+
+                    <!-- DIRECTIONS -->
+                    <!-- <input type="button" value="Open in Google Maps" class="directionButton"> -->
+                </div>
+                 
             </div>
 
             <div id="map"></div>
@@ -51,8 +56,8 @@
                     async
             ></script>
         </div>
-        
+
         <script src="js/index.js"></script>
-        <script src="js/carousel.js"></script>
+        <script src="js/navigate.js"></script>
     </body>
 </html>
