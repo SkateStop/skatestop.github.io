@@ -88,12 +88,50 @@ body{
     margin-right: auto;
     width: fit-content;
     background-color: #021327;
+    height: 510px;
     }
 
 .next {
-    position: absolute;
+    margin-top: 10px;
+    text-align: center;
     bottom: 8px;
     right: 16px;
     font-size: 18px;
    }
-    
+
+   
+    .button{
+        background-color: rgb(255, 255, 255);
+        border-radius:0%;
+        border: none;
+        padding: 5px 10px;
+        display: inline-block;
+        text-decoration: none;
+        /*margin-left: 5px;*/
+      }
+     
+
+      .button:hover{
+        background-color: rgb(81, 255, 0);
+      }
+
+      .mytext{
+          width: 400px;
+          height: 50px;
+          font-size: 16px;
+        }
+
+        .Street, .Park{
+            width:50px;
+            height:50px;
+        }
+
+        .Street:hover, .Park:hover{
+            background-color: rgb(179, 180, 177);
+        }
+
+        input[type=submit]{
+            margin-top: 50px;
+            width: 100px;
+            height: 50px;
+        }
