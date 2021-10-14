@@ -2,7 +2,7 @@ let map, infoWindow, barnes,phillips,glasgow,handloff;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
+    center: { lat: 39.679811832086635, lng: -75.75088279192195 },
     zoom: 12,
   });
   infoWindow = new google.maps.InfoWindow();
