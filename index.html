@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
         <title>SkateStop</title>
     </head>
-    <body style="font-family: 'Nunito', sans-serif;">
+    <body style="font-family: 'Poppins', sans-serif;">
         <div class="topNavbar">
             <div class="navbarLeft">
             <a href="index.html">
@@ -17,8 +17,8 @@
             </a>
             <a href="location.html" class="location">Add Location</a>
             </div>
-            <a href="signUp.html" class="loginLink">Sign Up</a>
-            <a href="logIn.html" class="loginLink">Log In</a>
+            <a href="signUp.html" class="login signup-link">Sign Up</a>
+            <a href="logIn.html" class="login login-link">Log In</a>
         </div>
 
         <div class="mainBody">
@@ -50,8 +50,7 @@
                 </div>
                  
             </div>
-
-            <div id="map"></div>
+                <div id="map"></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGpyKJHy75zcI9EfAGqU4cDpvg_RhXXjE&callback=initMap&v=weekly"
                     async
             ></script>
@@ -65,7 +64,7 @@
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
-          
+        
             // Your web app's Firebase configuration
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
             const firebaseConfig = {

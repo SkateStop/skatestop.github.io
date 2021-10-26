@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 .topNavbar{
-    background-color: #011328;
+    background-color: #181818;
     min-height: 10vh;
 }.logo{
     height: 50px;
@@ -11,7 +11,7 @@ body{
     padding: 8.3px;
     position: relative;
     top: 5px;
-}.loginLink, .location{
+}.login, .location{
     text-decoration: none;
     padding: 10px;
     color: white;
@@ -20,28 +20,24 @@ body{
     float: right;
 }.navbarLeft{
     float: left;
-}.loginLink:hover, .location:hover{
+}.login:hover, .location:hover{
     color: grey;
 }
 
 .mainBody{
     display: flex;
+    width: 100%;
 }
 .infoPanel{
-    background-color: grey;
+    background-color: #212223;
     color: white;
-    height: 200px;
-    min-width: 25vw;
-    margin: 0px;
-    /* padding-top: 2vh;
-    padding-bottom: 2vh;
-    padding-left: 1vw;
-    padding-right: 1vw; */
-    min-height: 90vh;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    height: 90vh;
+    width: 25vw;
+    margin: 0;
     text-align: center;
     overflow-y: scroll;
 }#locationTitle{
-    background-color: #424242;
     margin: 0;
 }.navbarDispaly{
     object-fit: contain;
@@ -74,6 +70,7 @@ body{
 
 #map{
     min-width: 75vw;
+    box-shadow: inset 8px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header {
