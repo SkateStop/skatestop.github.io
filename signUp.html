@@ -5,6 +5,7 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/signUp.js"></script>
     <meta charset="UTF-8">
     <link href="css/signUp.css" rel="stylesheet">
     <title>Skate Stop</title>
@@ -21,34 +22,34 @@
     <button type="button">Log In</button> -->
 
     <div id="signUp">
-      <form class="form-signin">
+      <form class="form-signup">
         <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
 
-      <table>
-          <tr>
-            <td><label for="inputName" class="label-name">Name</label></td>
-            <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus></td>
-          </tr>
-          <tr>
-            <td><label for="inputEmail" class="label-email">Email address</label></td>
-            <td><input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus></td>
-          </tr>
-          <tr>
-            <td><label for="inputUserName" class="label-username">Username</label></td>
-            <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus></td>
-          </tr>
-          <tr>
-            <td><label for="inputPassword" class="label-password">Password</label></td>
-            <td><input type="password" id="inputPassword" class="form-control" placeholder="Password" required></td>
-          </tr>
-          <tr>
-            <td><label for="confirmPassword" class="label-conPassword">Confirm Password</label></td>
-            <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required></td>
-          </tr>
-      </table>
+        <table id="signUp-table">
+            <tr>
+              <td><label for="inputName" class="label-name">Name</label></td>
+              <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus></td>
+            </tr>
+            <tr>
+              <td><label for="inputEmail" class="label-email">Email address</label></td>
+              <td><input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus></td>
+            </tr>
+            <tr>
+              <td><label for="inputUserName" class="label-username">Username</label></td>
+              <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus></td>
+            </tr>
+            <tr>
+              <td><label for="inputPassword" class="label-password">Password</label></td>
+              <td><input type="password" id="inputPassword" class="form-control" placeholder="Password" required></td>
+            </tr>
+            <tr>
+              <td><label for="confirmPassword" class="label-conPassword">Confirm Password</label></td>
+              <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required></td>
+            </tr>
+        </table>
         
-        <button class="signUpBtn" type="submit" style="border: 2px solid white;">Sign up</button>
+        <button onclick="register()" class="signUpBtn" type="submit" style="border: 2px solid white;">Sign up</button>
         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
       </form>
     </div>

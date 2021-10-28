@@ -1,3 +1,23 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
+  authDomain: "skatestop-faba8.firebaseapp.com",
+  projectId: "skatestop-faba8",
+  storageBucket: "skatestop-faba8.appspot.com",
+  messagingSenderId: "978090226239",
+  appId: "1:978090226239:web:4b3678213b950868c27e8a",
+  measurementId: "G-SHSFDD5QK7"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth();
+const database = firebase.database()
+
+
+
+
+
 let map, infoWindow, barnes,phillips,glasgow,handloff;
 
 function initMap() {
