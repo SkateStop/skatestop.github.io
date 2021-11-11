@@ -95,16 +95,6 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow();
   geocoder=new google.maps.Geocoder();
 
-  const locationInput=document.createElement("input");
-  locationInput.setAttribute('type','text');
-  const locationButton = document.createElement("button");
-  locationButton.textContent = "Search";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(locationInput);
-  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    geocode({ address: locationInput.value },map);
-  });
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -173,7 +163,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-
 function addMarker(coordinates,placeMap){
   mark = new google.maps.Marker({
     position: coordinates,
@@ -182,17 +171,16 @@ function addMarker(coordinates,placeMap){
   return mark
 }
 
-
 function buttonthing(){
   console.log("button triggered");
   var data = "{\"email\": \"one\",\"name\": \"two\",\"password\": \"three\",\"uersname\": \"four\" }";
   var xhttp = new XMLHttpRequest();
   //xhttp.open("POST", "/api/getUsers", true);
   //xhttp.send();
-  
-
 } 
-function geocode(request,map){
+
+function geocode(request){
+  console.log(request);
   geocoder
     .geocode(request)
     .then((result) => {
@@ -204,4 +192,19 @@ function geocode(request,map){
     .catch((e) => {
       alert("Geocode was not successful for the following reason: " + e);
     });
+
+    document.getElementById('search').value = "";
 }
+
+//hide and show search bar on click of the icon
+window.onload = function(){
+  document.onclick = function(e){
+    searchInput = document.getElementById('search');
+    if(e.target.id == 'searchicon' || e.target.id == 'search'){
+      searchInput.style.width = '8vw';
+      searchInput.focus();
+    }else if(e.target.id !== 'searchicon' || e.target.id == 'search'){
+      searchInput.style.width = '0';
+    }
+  };
+};

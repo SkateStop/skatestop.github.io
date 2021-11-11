@@ -3,15 +3,18 @@ body{
     padding: 0;
     background-color: #181818;
 }
+
 .navbar{
     background-color: #181818;
     height: 10vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .logo-wrap{
     display: flex;
+    margin: auto;
+
 }
 
 .logo-wrap img{
@@ -20,6 +23,7 @@ body{
     padding: 8.3px;
     position: relative;
     margin: auto;
+    margin-right: 0;
 
 }
 
@@ -27,34 +31,44 @@ body{
     color: white;
     font-size: larger;
     margin: auto;
+    margin-left: 0;
 }
 
 .navlink{
     text-decoration: none;
     padding: 12px;
     color: white;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
+    margin-left: 1vw;
 }
 
 .navlink:hover{
     color:rgb(179, 180, 177);
 }
+
+.wrapper{
+    display: flex;
+    width: 33vw;
+    text-align: center;
+    align-items: center;
+}
+
 .features{
     display: flex;
+    margin: auto;
+    margin-right: 1vw;
 }
 
 .features i{
     color: white;
-    padding: 10px;
+    padding: 5px;
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer;
 }
 .login{
     background-color: teal;
-    margin-top: auto;
-    margin-bottom: auto;
+
     border-radius: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -64,6 +78,31 @@ body{
 
 .login:hover{
     background-color: rgb(0, 100, 100);
+}
+
+form{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#search{
+    background-color: #181818;
+    color: white;
+    font-size: 1rem;
+    width: 0;
+    border: 0;
+    border-style: solid;
+    border-bottom: 2px;
+    border-color:#212223;
+    transition: 0.5s;
+}
+
+#search:focus{
+    outline: 0;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-color: #212223;
+    transition: 0s;
 }
 
 .mainBody{
