@@ -1,7 +1,6 @@
-// set up register Function
-
-function register () {
-    //Get all input fields
+const signUp = document.getElementById('#signUp');
+/* signUp.addEventListener(signUp, (e) => {
+    e.preventDefault();
 
     inputName = document.getElementById('inputName').value;
     email = document.getElementById('inputEmail').value;
@@ -9,18 +8,38 @@ function register () {
     password = document.getElementById('inputPassword').value;
     
     //validate input fields
+    validate_email(email);
+    validate_password(password);
+
+    if(email && password){
+        console.log(email, password);
+    }
+    
+}); */
+// set up register Function
+
+function register (event) {
+    //Get all input fields
+
+    inputName = document.getElementById('#inputName').value;
+    email = document.getElementById('#inputEmail').value;
+    username = document.getElementById('#inputUserName').value;
+    password = document.getElementById('#inputPassword').value;
+    
+    //validate input fields
+    validate_email(email);
+    validate_password(password);
+
+    console.log("hello!!");
+
+    event.preventDefault();
 
 }
 
+
 function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/.test(str);
-    if (expression.test(email) == true){
-        // email is good
-        return true
-    } else {
-        // Email is not good
-        return false
-    }
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 function validate_password (password) {
@@ -30,5 +49,6 @@ function validate_password (password) {
         return true
     }
 }
-
-function validate_field(field)
+if(signUp){
+    signUp.addEventListener('submit', register);
+}
