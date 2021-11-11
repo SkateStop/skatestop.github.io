@@ -7,25 +7,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/all.css">
+
         <title>SkateStop</title>
     </head>
     <body style="font-family: 'Poppins', sans-serif;">
-        <div class="topNavbar">
-            <div class="navbarLeft">
-            <a href="index.html">
-                <img src="images/skatestoplogo_w.png" alt="logo" class="logo">
-            </a>
-            <a href="location.html" class="location">Add Location</a>
+        <div class="navbar">
+            <a href="location.html" class="navlink location">Add Location</a>
+            <div class="logo-wrap">
+                <img src="images/skatestoplogo_w.png" alt="logo" class="logo-img">
+                <h1>SkateStop</h1>
             </div>
-            <a href="signUp.html" class="login signup-link">Sign Up</a>
-            <a href="logIn.html" class="login login-link">Log In</a>
+            <div class="features">
+                <i class="navlink fas fa-search"></i>
+                <a href="logIn.html" class="navlink login">Sign In</a>
+]            </div>
+
         </div>
 
         <div class="mainBody">
             <div class="infoPanel">
 
-                <h1 id="locationTitle" class="locationNavbar">Click a marker to get started</h1>
-                <button onclick="buttonthing()">hi</button>
+                <h1 id="locationTitle" class="locationNavbar">Select a marker</h1>
+
                 <div id="locationNavbar" class="locationNavbar" style="display: none;">
                     <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
                     <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
