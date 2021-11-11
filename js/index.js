@@ -196,15 +196,21 @@ function geocode(request){
     document.getElementById('search').value = "";
 }
 
+
+var x = window.matchMedia("(max-width: 700px)")
+
 //hide and show search bar on click of the icon
-window.onload = function(){
-  document.onclick = function(e){
-    searchInput = document.getElementById('search');
-    if(e.target.id == 'searchicon' || e.target.id == 'search'){
-      searchInput.style.width = '8vw';
-      searchInput.focus();
-    }else if(e.target.id !== 'searchicon' || e.target.id == 'search'){
-      searchInput.style.width = '0';
+document.onclick = function(e){
+  searchInput = document.getElementById('search');
+  if(e.target.id == 'searchicon' || e.target.id == 'search'){
+    if(x.matches){
+      searchInput.style.width = '25vw';
+
+    }else{
+      searchInput.style.width = '12vw';
     }
-  };
+    searchInput.focus();
+  }else if(e.target.id !== 'searchicon' || e.target.id == 'search'){
+    searchInput.style.width = '0';
+  }
 };
