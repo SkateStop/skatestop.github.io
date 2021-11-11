@@ -4,7 +4,7 @@
 
 
 
-let map, infoWindow, barnes,phillips,glasgow,handloff;
+let map, infoWindow, barnes,phillips,glasgow,handloff,geocoder;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -93,6 +93,18 @@ function initMap() {
       ],
   });
   infoWindow = new google.maps.InfoWindow();
+  geocoder=new google.maps.Geocoder();
+
+  const locationInput=document.createElement("input");
+  locationInput.setAttribute('type','text');
+  const locationButton = document.createElement("button");
+  locationButton.textContent = "Search";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(locationInput);
+  map.controls[google.maps.ControlPosition.RIGHT_TOP].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    geocode({ address: locationInput.value },map);
+  });
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -180,3 +192,16 @@ function buttonthing(){
   
 
 } 
+function geocode(request,map){
+  geocoder
+    .geocode(request)
+    .then((result) => {
+      const { results } = result;
+
+      map.setCenter(results[0].geometry.location);
+      return results;
+    })
+    .catch((e) => {
+      alert("Geocode was not successful for the following reason: " + e);
+    });
+}

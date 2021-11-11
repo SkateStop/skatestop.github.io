@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { doc, setDoc } from "firebase/firestore"; 
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
@@ -13,6 +13,7 @@ measurementId: "G-SHSFDD5QK7"
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 
 import express from 'express';
 const e_app = express();
@@ -45,6 +46,19 @@ e_app.post('/api/addLocation', function(req, res){
 });
 
 e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);});
+
+
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
 
 
 function serverTest(){
