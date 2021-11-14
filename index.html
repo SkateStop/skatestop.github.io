@@ -8,21 +8,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/popup.css">
         <script src="js/popup.js"></script>
-        <title>SkateStop</title>      
+        <title>SkateStop</title>
     </head>
     <body style="font-family: 'Poppins', sans-serif;">
-        <div class="topNavbar">
-            <div class="navbarLeft">
-            <a href="index.html">
-                <img src="images/skatestoplogo_w.png" alt="logo" class="logo">
-            </a>
-            <!--
-            <a href="location.html" class="location">Add Location</a>
-            -->
-            <a href="#" class="open-button" onclick="openForm()" style="background-color: #181818;" >Add Location</button>
-
+        <div class="navbar">
+            <div class="wrapper">
+                <!--
+                <a href="location.html" class="navlink location">Add Location</a>
+                -->
+                <a href="#" class="open-button" onclick="openForm()" style="background-color: #181818;" >Add Location</button>
             </div>
             <div class="wrapper2">
                 <div class="logo-wrap">
@@ -70,6 +67,21 @@
                     <!-- <input type="button" value="Open in Google Maps" class="directionButton"> -->
                 </div>
                  
+                <div class="popup" id="myForm">
+                    <form action="/action_page.php" class="container">
+                        <h1>Add Location</h1>
+                        <label for="Address"><b>Address</b></label>
+                        <input type="text" placeholder="Enter Address" name="Address" required>
+                        <label for="parktype"><br><b>Park Type</b></label>
+                        <input type="text" placeholder="Enter Street or Park" name="parktype" required>
+                        <p><label for="Comments"><b>Comments</b></label>
+                        <input type="text" placeholder="Add Comments"  name="Comments">
+                        </p>
+                        <button type="submit" class="btn">Add Location</button>
+                        <button type="button" class="btn exit" onclick="closeForm()">Close</button>
+                    </form>
+                </div>
+            
             </div>
                 <div id="map"></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApjYIbQSIoRLNps9A1Mx3ZoVr6NdZD3xw&callback=initMap&v=weekly"
@@ -77,25 +89,14 @@
             ></script>
         </div>
 
+
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>
 
-    
-    <div class="popup" id="myForm">
-        <form action="/action_page.php" class="container">
-            <h1>Add Location</h1>
-            <label for="Address"><b>Address</b></label>
-            <input type="text" placeholder="Enter Address" name="Address" required>
-            <label for="parktype"><br><b>Park Type</b></label>
-            <input type="text" placeholder="Enter Street or Park" name="parktype" required>
-            <p><label for="Comments"><b>Comments</b></label>
-            <input type="text" placeholder="Add Comments"  name="Comments">
-            </p>
-            <button type="submit" class="btn">Add Location</button>
-            <button type="button" class="btn exit" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-
+        <!-- <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script> -->
     </body>
     
 </html>
