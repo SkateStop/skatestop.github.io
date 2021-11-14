@@ -1,27 +1,108 @@
 body{
     margin: 0;
     padding: 0;
-}
-.topNavbar{
     background-color: #181818;
-    min-height: 10vh;
-}.logo{
+}
+
+.navbar{
+    background-color: #181818;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo-wrap{
+    display: flex;
+    margin: auto;
+
+}
+
+.logo-wrap img{
     height: 50px;
     width: 50px;
     padding: 8.3px;
     position: relative;
-    top: 5px;
-}.login, .location{
-    text-decoration: none;
-    padding: 10px;
+    margin: auto;
+    margin-right: 0;
+
+}
+
+.logo-wrap h1{
     color: white;
-    margin-top: 2.2vh;
-    margin-bottom: 2.2vh;
-    float: right;
-}.navbarLeft{
-    float: left;
-}.login:hover, .location:hover{
-    color: grey;
+    font-size: larger;
+    margin: auto;
+    margin-left: 0;
+}
+
+.navlink{
+    text-decoration: none;
+    padding: 12px;
+    color: white;
+    margin: auto;
+    margin-left: 1vw;
+}
+
+.navlink:hover{
+    color:rgb(179, 180, 177);
+}
+
+.wrapper, .wrapper2{
+    display: flex;
+    width: 33vw;
+    text-align: center;
+    align-items: center;
+}
+
+.features{
+    display: flex;
+    margin: auto;
+    margin-right: 1vw;
+}
+
+.features i{
+    color: white;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+.login{
+    background-color: teal;
+
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 1vw; 
+    padding-right: 1vw;
+}
+
+.login:hover{
+    background-color: rgb(0, 100, 100);
+}
+
+form{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#search{
+    background-color: #181818;
+    color: white;
+    font-size: 1rem;
+    width: 0;
+    border: 0;
+    border-style: solid;
+    border-bottom: 2px;
+    border-color:#212223;
+    transition: 0.5s;
+}
+
+#search:focus{
+    outline: 0;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-color: #212223;
+    transition: 0s;
 }
 
 .mainBody{
@@ -70,6 +151,9 @@ body{
 
 #map{
     min-width: 75vw;
+}
+
+.gm-style > div:nth-child(2) > div:nth-child(2){
     box-shadow: inset 8px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -86,7 +170,7 @@ body{
     width: fit-content;
     background-color: #021327;
     height: 510px;
-    }
+}
 
 .next {
     margin-top: 10px;
@@ -94,41 +178,63 @@ body{
     bottom: 8px;
     right: 16px;
     font-size: 18px;
-   }
+}
 
    
-    .button{
-        background-color: rgb(255, 255, 255);
-        border-radius:0%;
-        border: none;
-        padding: 5px 10px;
-        display: inline-block;
-        text-decoration: none;
-        /*margin-left: 5px;*/
-      }
-     
+.button{
+    background-color: rgb(255, 255, 255);
+    border-radius:0%;
+    border: none;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    /*margin-left: 5px;*/
+}
 
-      .button:hover{
-        background-color: rgb(81, 255, 0);
-      }
+.button:hover{
+    background-color: rgb(81, 255, 0);
+}
 
-      .mytext{
-          width: 400px;
-          height: 50px;
-          font-size: 16px;
-        }
+.mytext{
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+}
 
-        .Street, .Park{
-            width:50px;
-            height:50px;
-        }
+.Street, .Park{
+    width:50px;
+    height:50px;
+}
 
-        .Street:hover, .Park:hover{
-            background-color: rgb(179, 180, 177);
-        }
+.Street:hover, .Park:hover{
+    background-color: rgb(179, 180, 177);
+}
 
-        input[type=submit]{
-            margin-top: 50px;
-            width: 100px;
-            height: 50px;
-        }
+input[type=submit]{
+    margin-top: 50px;
+    width: 100px;
+    height: 50px;
+}
+
+@media only screen and (max-width: 700px){
+    .navlink{
+        font-size: 12px;
+    }
+
+    .wrapper{
+        width: 50vw;
+    }
+
+    .wrapper2{
+        display: none;
+    }
+
+    .features{
+        margin-right: 3vw;
+    }
+
+    #locationTitle{
+        font-size: medium;
+    }
+
+}

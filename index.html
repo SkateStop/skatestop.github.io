@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
@@ -23,14 +24,28 @@
             <a href="#" class="open-button" onclick="openForm()" style="background-color: #181818;" >Add Location</button>
 
             </div>
-            <a href="signUp.html" class="login signup-link">Sign Up</a>
-            <a href="logIn.html" class="login login-link">Log In</a>
+            <div class="wrapper2">
+                <div class="logo-wrap">
+                    <img src="images/skatestoplogo_w.png" alt="logo" class="logo-img">
+                    <h1>SkateStop</h1>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="features">
+                    <form id="formid" onsubmit="return false">
+                        <i class="fas fa-search" id="searchicon"></i>
+                        <input type="search" onsearch="geocode({ address: document.getElementById('search').value })" name="fa-search" placeholder="Search..." id="search">
+                    </form>
+                    <a href="logIn.html" class="navlink login">Sign In</a>
+                </div>
+            </div>
+
         </div>
 
         <div class="mainBody">
             <div class="infoPanel">
 
-                <h1 id="locationTitle" class="locationNavbar">Click a marker to get started</h1>
+                <h1 id="locationTitle" class="locationNavbar">Select a marker</h1>
 
                 <div id="locationNavbar" class="locationNavbar" style="display: none;">
                     <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
@@ -57,7 +72,7 @@
                  
             </div>
                 <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGpyKJHy75zcI9EfAGqU4cDpvg_RhXXjE&callback=initMap&v=weekly"
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApjYIbQSIoRLNps9A1Mx3ZoVr6NdZD3xw&callback=initMap&v=weekly"
                     async
             ></script>
         </div>
@@ -82,8 +97,5 @@
     </div>
 
     </body>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+    
 </html>
