@@ -3,12 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/popup.css">
         <script src="./index.js"></script>
+        <script src="js/popup.js"></script>
         <title>SkateStop</title>
     </head>
 
     <body style="background-color: #808080;">
-
+    
+    <!--
     <div class="header">
         <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
         <h1 style="text-align: center;">Add A Location</h1>
@@ -40,8 +43,24 @@
             </form>
             
         </div>
+    -->
 
-    
+    <button class="open-button" onclick="openForm()">Open Form</button>
+
+    <div class="popup" id="myForm">
+        <form action="/action_page.php" class="container">
+            <h1>Add Location</h1>
+            <label for="Address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="Address" required>
+            <label for="parktype"><br><b>Park Type</b></label>
+            <input type="text" placeholder="Enter Street or Park" name="parktype" required>
+            <p><label for="Comments"><b>Comments</b></label>
+            <input type="text" placeholder="Add Comments"  name="Comments">
+            </p>
+            <button type="submit" class="btn">Add Location</button>
+            <button type="button" class="btn exit" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
     </body>
 

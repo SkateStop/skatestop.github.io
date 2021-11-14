@@ -7,7 +7,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <title>SkateStop</title>
+        <link rel="stylesheet" href="css/popup.css">
+        <script src="js/popup.js"></script>
+        <title>SkateStop</title>      
     </head>
     <body style="font-family: 'Poppins', sans-serif;">
         <div class="topNavbar">
@@ -15,7 +17,11 @@
             <a href="index.html">
                 <img src="images/skatestoplogo_w.png" alt="logo" class="logo">
             </a>
+            <!--
             <a href="location.html" class="location">Add Location</a>
+            -->
+            <a href="#" class="open-button" onclick="openForm()" style="background-color: #181818;" >Add Location</button>
+
             </div>
             <a href="signUp.html" class="login signup-link">Sign Up</a>
             <a href="logIn.html" class="login login-link">Log In</a>
@@ -58,6 +64,22 @@
 
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>
+
+    
+    <div class="popup" id="myForm">
+        <form action="/action_page.php" class="container">
+            <h1>Add Location</h1>
+            <label for="Address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="Address" required>
+            <label for="parktype"><br><b>Park Type</b></label>
+            <input type="text" placeholder="Enter Street or Park" name="parktype" required>
+            <p><label for="Comments"><b>Comments</b></label>
+            <input type="text" placeholder="Add Comments"  name="Comments">
+            </p>
+            <button type="submit" class="btn">Add Location</button>
+            <button type="button" class="btn exit" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
     </body>
     <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>

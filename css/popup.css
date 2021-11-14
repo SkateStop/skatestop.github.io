@@ -1,0 +1,63 @@
+
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 200px;
+    right: 600px;
+    z-index: 9;
+    
+  }
+  
+  .container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: slategrey;
+  }
+  
+  .container input[type=text], .container input[type=text] {
+    width:fit-content;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .container input[type=text]:focus, .container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .container .btn {
+    color: white;
+    background-color: springgreen;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  .container .exit {
+    background-color: red;
+  }
+  
+  .container .btn:hover, .open-button:hover {
+    opacity: 10;
+    color: #808080;
+  }
+
+  .b1 {
+    padding: 10px 20px;
+    color: purple;
+
+  }
+
+  .open-button {
+    color: white;
+    margin-top: 3.2vh;
+    margin-bottom: 2.2vh;
+    float: right;
+    text-decoration: none;
+  }
+
