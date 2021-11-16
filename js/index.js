@@ -205,7 +205,6 @@ document.onclick = function(e){
   if(e.target.id == 'searchicon' || e.target.id == 'search'){
     if(x.matches){
       searchInput.style.width = '25vw';
-
     }else{
       searchInput.style.width = '12vw';
     }

@@ -5,7 +5,7 @@
     bottom: 200px;
     right: 600px;
     z-index: 9;
-    
+    transition: 1s;
   }
   
   .container {
@@ -55,8 +55,8 @@
 
   .open-button {
     color: white;
-    margin-top: 3.2vh;
-    margin-bottom: 2.2vh;
+    margin-top: auto;
+    margin-bottom: auto;
     float: right;
     text-decoration: none;
   }
