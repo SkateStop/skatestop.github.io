@@ -14,7 +14,6 @@
         <title>SkateStop</title>
     </head>
     <body style="font-family: 'Poppins', sans-serif;">
-        <div class="test">
         <div class="navbar">
             <div class="wrapper">
                 <!--
@@ -67,21 +66,6 @@
                     <!-- DIRECTIONS -->
                     <!-- <input type="button" value="Open in Google Maps" class="directionButton"> -->
                 </div>
-                 
-                <div class="popup" id="myForm">
-                    <form action="/action_page.php" class="container">
-                        <h1>Add Location</h1>
-                        <label for="Address"><b>Address</b></label>
-                        <input type="text" placeholder="Enter Address" name="Address" required>
-                        <label for="parktype"><br><b>Park Type</b></label>
-                        <input type="text" placeholder="Enter Street or Park" name="parktype" required>
-                        <p><label for="Comments"><b>Comments</b></label>
-                        <input type="text" placeholder="Add Comments"  name="Comments">
-                        </p>
-                        <button type="submit" class="btn">Add Location</button>
-                        <button type="button" class="btn exit" onclick="closeForm()">Close</button>
-                    </form>
-                </div>
             
             </div>
                 <div id="map"></div>
@@ -90,11 +74,29 @@
             ></script>
         </div>
 
+            <div class="popup" id="myForm">
+                <form action="/action_page.php" class="container">
+                    <h1>Add Location</h1>
+                    <label for="Address"><b>Address:</b></label><br>
+                    <input type="text" placeholder="Enter Address" name="Address" required>
+                    <label for="parktype"><br><b>Park Type:</b></label><br>
+                    <select name="parktype" id="parktype">
+                        <option>Street</option>
+                        <option>Park</option>
+                    </select>
+<!--                <input type="text" placeholder="Enter Street or Park" name="parktype" required> -->
+                    <p><label for="Comments"><b>Comments:</b></label><br>
+                    <input type="text" placeholder="Add Comments"  name="Comments">
+                    </p>
+                    <div class="button-wrapper">
+                        <button type="submit" class="btn">Add Location</button>
+                        <button type="button" class="btn exit" onclick="closeForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
 
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>
-
-        </div>
         <!-- <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
