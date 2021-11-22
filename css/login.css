@@ -1,23 +1,4 @@
 
-body {
-  height: 100%;
-}
-
-body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #808080;
-  font-family: 'Nunito', sans-serif
-}
 
 #logIn {
   border-radius: 25px;
@@ -31,7 +12,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-}
+ }
 .form-signin .checkbox {
   font-weight: 400;
 }
@@ -61,7 +42,7 @@ body {
 .g-signin2 > div{
   margin: 0 auto;
 }
-button[type="submit"]{
+.signInBtn{
   background-color: #021327;
   border: 2px solid white;
   padding: 10px;
@@ -71,7 +52,7 @@ button[type="submit"]{
   transition: 0.4s;
   color: white
 }
-button[type="submit"]:hover{
+.signInBtn:hover{
   background-color: white; /* Green */
   color: black;
 }

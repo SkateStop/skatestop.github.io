@@ -20,6 +20,18 @@
 
 .fa-search:before {
     content: "\f002"; }
+
+.fa-user:before {
+  content: "\f007"; }
+
+.fa-key:before {
+  content: "\f084"; }
+  
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -.0667em; }
+
 .far {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }

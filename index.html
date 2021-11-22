@@ -10,13 +10,14 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/popup.css">
+        <link href="css/login.css" rel="stylesheet">
         <script src="js/popup.js"></script>
         <title>SkateStop</title>
     </head>
     <body style="font-family: 'Poppins', sans-serif;">
         <div class="navbar">
             <div class="wrapper">
-                <a href="#" class=" navlink open-button" onclick="openForm()">Add Location</a>
+                <a href="#" class=" navlink open-button" onclick="openLocationForm()">Add Location</a>
             </div>
             <div class="wrapper2">
                 <div class="logo-wrap">
@@ -30,7 +31,7 @@
                         <i class="fas fa-search" id="searchicon"></i>
                         <input type="search" onsearch="geocode({ address: document.getElementById('search').value })" name="fa-search" placeholder="Search..." id="search">
                     </form>
-                    <a href="logIn.html" class="navlink login">Sign In</a>
+                    <a href="#" class="navlink login" onclick="openLoginForm()">Sign In</a>
                 </div>
             </div>
 
@@ -71,7 +72,7 @@
             ></script>
         </div>
 
-            <div class="popup" id="myForm">
+            <div class="popup" id="locationForm">
                 <form action="/action_page.php" class="container">
                     <h1>Add Location</h1>
                     <label for="Address"><b>Address:</b></label><br>
@@ -85,11 +86,33 @@
                     <p><label for="Comments"><b>Comments:</b></label><br>
                     <input type="text" placeholder="Add Comments"  name="Comments">
                     </p>
-                    <div class="button-wrapper">
-                        <button type="submit" class="btn">Add Location</button>
-                        <button type="button" class="btn exit" onclick="closeForm()">Cancel</button>
-                    </div>
+                        <button type="submit" class="btn navlink login">Add Location</button>
+                        <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
                 </form>
+            </div>
+
+            <div class="popup" id="loginForm">
+                <form class="container">
+    
+                    <img src="images/skatestoplogo_w.png" alt="logo" width="72" height="72">
+                    <h1>Sign In</h1>
+                    <div class="signin-wrapper">
+                        <i class="fas fa-user fa-lg"></i>
+                        <input type="text" id="inputEmail" class="form-control" placeholder="Enter email" required autofocus>
+                    </div>
+                    <div class="signin-wrapper">
+                        <i class="fas fa-key fa-lg"></i>
+                        <input type="text" id="inputPassword" class="form-control" placeholder="Enter password" required>
+                    </div>
+                    <div class="checkbox mb-3">
+                      <label>
+                        <input type="checkbox" value="remember-me" class="checkbox">Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn navlink login">Sign in</button>
+                    <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                  </form>
             </div>
 
         <script src="js/index.js"></script>

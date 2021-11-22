@@ -1,7 +1,15 @@
-function openForm() {
-  document.getElementById("myForm").style.display = "inline";
+function openLocationForm() {
+  document.getElementById("locationForm").style.display = "inline";
 }
   
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function closeLocationForm() {
+  document.getElementById("locationForm").style.display = "none";
+}
+
+function openLoginForm(){
+  document.getElementById("loginForm").style.display = "inline";
+}
+
+function closeLoginForm(){
+  document.getElementById("loginForm").style.display = "none";
 }
