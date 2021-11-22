@@ -14,6 +14,7 @@ measurementId: "G-SHSFDD5QK7"
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const database = app.database();
 
 import express from 'express';
 const e_app = express();
@@ -47,8 +48,34 @@ e_app.post('/api/addLocation', function(req, res){
 
 e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);});
 
+function createUser(email, password, inputName, username){
+  auth.createUserWithEmailAndPassword(email, password)
+  .then(function() {
+    var user = auth.currentUser
+    var database_ref = database.ref()
 
-createUserWithEmailAndPassword(auth, email, password)
+    var user_data = {
+      inputName : inputName,
+      email : email,
+      username :username,
+      password : password,
+      last_login : Date.now()
+    }
+    database_ref.child('user/' + user.uid).set(user_data)
+
+    alert('user created!!')
+  })
+  .catch(function(error) {
+    var error_code = error.code
+    var error_message = error.message
+
+    alert(error_message)
+  })
+}
+
+
+
+/* createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
@@ -60,7 +87,7 @@ createUserWithEmailAndPassword(auth, email, password)
     // ..
   });
 
-
+ */
 function serverTest(){
     console.log("button triggered");
     

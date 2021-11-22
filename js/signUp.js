@@ -1,3 +1,5 @@
+import { createUserWithEmailAndPassword } from "@firebase/auth";
+
 const signUp = document.getElementById('#signUp');
 /* signUp.addEventListener(signUp, (e) => {
     e.preventDefault();
@@ -21,25 +23,33 @@ const signUp = document.getElementById('#signUp');
 function register (event) {
     //Get all input fields
 
-    inputName = document.getElementById('#inputName').value;
-    email = document.getElementById('#inputEmail').value;
-    username = document.getElementById('#inputUserName').value;
-    password = document.getElementById('#inputPassword').value;
+    inputName = document.querySelector('inputName').value;
+    email = document.querySelector('inputEmail').value;
+    username = document.querySelector('inputUserName').value;
+    password = document.querySelector('inputPassword').value;
     
     //validate input fields
-    validate_email(email);
-    validate_password(password);
+    if (validate_email(email) == false || validate_password(password) == false){
+        alert("Email or password dont work")
+        return
+    }
 
-    console.log("hello!!");
+    createUser(email, password, inputName, username)
+    console.log("hello!!")
 
-    event.preventDefault();
+    event.preventDefault()
 
 }
 
 
 function validate_email(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    if (expression.test(email) == true){
+        return true
+    }
+    else {
+        return false
+    }
 }
 
 function validate_password (password) {
