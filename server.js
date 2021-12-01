@@ -49,6 +49,7 @@ e_app.post('/api/addLocation', function(req, res){
 
 e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);});
  */
+// Sign Up - Add user to firebase authentication
 document.getElementById("signUpBtn").addEventListener('click', function(){
   const email = document.getElementById("inputEmail").value
   const password = document.getElementById("inputPassword").value
@@ -65,6 +66,26 @@ document.getElementById("signUpBtn").addEventListener('click', function(){
       // ..
       console.log(errorCode + errorMessage);
   });
+})
+
+// Log In - Log in using firebase authentication with user that is already part of the users list
+document.getElementById("signUpBtn").addEventListener('click', function(){
+  const email = document.getElementById("inputEmail").value
+  const password = document.getElementById("inputPassword").value
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // ...
+      console.log("created user")
+      alert("Signed In!!")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      console.log(errorCode + errorMessage);
+    });
 })
 
 
