@@ -5,10 +5,10 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="server.js"></script>
-    <script src="js/signUp.js"></script>
     <meta charset="UTF-8">
     <link href="css/signUp.css" rel="stylesheet">
+    <script type="module" src="server.js"></script>
+    <script type="text/javascript" src="js/signUp.js"></script>
     <title>Skate Stop</title>
   </head>
   <body class="text-center">
@@ -27,50 +27,40 @@
         <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
 
+        <!-- <label for="fname">Email:</label>
+        <input type="text" id="email" name="fname"><br><br>
+        <label for="lname">Password:</label>
+        <input type="text" id="password" name="lname"><br><br>
+        <input type="submit" id="signup" value="Submit"> -->
+
         <table id="signUp-table">
             <tr>
               <td><label for="inputName" class="label-name">Name</label></td>
-              <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus></td>
+              <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus><br><br></td>
             </tr>
             <tr>
               <td><label for="inputEmail" class="label-email">Email address</label></td>
-              <td><input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus></td>
+              <td><input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br><br></td>
             </tr>
             <tr>
               <td><label for="inputUserName" class="label-username">Username</label></td>
-              <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus></td>
+              <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus><br><br></td>
             </tr>
             <tr>
               <td><label for="inputPassword" class="label-password">Password</label></td>
-              <td><input type="password" id="inputPassword" class="form-control" placeholder="Password" required></td>
+              <td><input type="password" id="inputPassword" class="form-control" placeholder="Password" required><br><br></td>
             </tr>
             <tr>
               <td><label for="confirmPassword" class="label-conPassword">Confirm Password</label></td>
-              <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required></td>
+              <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required><br><br></td>
             </tr>
         </table>
         
-        <button id="signUpBtn" type="submit" style="border: 2px solid white;">Sign up</button>
+        <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
+        <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
         <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+        
       </form>
     </div>
-
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
-    
   </body>
 </html>
