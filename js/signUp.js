@@ -1,7 +1,21 @@
 import {createUserAccount} from "../server.js"
 /* import { user } from "./login.js" */
 
-document.getElementById("signIn").addEventListener('click', function(){
+
+function validate_email(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+function validate_password (password) {
+    if (password < 6) {
+        return false
+    } else {
+        return true
+    }
+}
+
+
+document.getElementById("signUpBtn").addEventListener('click', function(){
     console.log("inside function")
     const email = document.getElementById("inputEmailSignup").value
     const password = document.getElementById("inputPasswordSignup").value
@@ -16,22 +30,4 @@ document.getElementById("signIn").addEventListener('click', function(){
     }
 })
 
-
-function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
-    if (expression.test(email) == true){
-        return true
-    }
-    else {
-        return false
-    }
-}
-
-function validate_password (password) {
-    if (password < 6) {
-        return false
-    } else {
-        return true
-    }
-}
 

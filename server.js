@@ -2,7 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
 import { getAuth, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
-
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 const firebaseConfig = {
 apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
 authDomain: "skatestop-faba8.firebaseapp.com",
@@ -16,6 +16,7 @@ measurementId: "G-SHSFDD5QK7"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const analytics = getAnalytics(app);
+const database = getDatabase(app);
 
 function user(email, name, username){
   this.email = email;
@@ -68,6 +69,28 @@ function createUserAccount(email, password, name, username){
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
+      updateProfile(auth.currentUser, {
+        displayName: username
+        }).then(() => {
+          // Profile updated!
+          // ...
+          console.log('profile updated')
+        }).catch((error) => {
+          // An error occurred
+          // ...
+    
+          const errorCode = error.code;
+          const errorMessage = error.message;
+    
+          console.log(errorCode + errorMessage);
+        });
+
+      /* const db = getDatabase();
+      set(ref(db, 'users/' + userId), {
+        username: username,
+        email: email,
+        name: name,
+      }); */
       // ...
       console.log("created user")
       alert("Signed In!!")
@@ -78,8 +101,9 @@ function createUserAccount(email, password, name, username){
 
       console.log(errorCode + errorMessage);
     });
-    updateProfile(auth.currentUser, {
-      name: name, username: username
+
+    /* updateProfile(auth.currentUser, {
+    displayName: username
     }).then(() => {
       // Profile updated!
       // ...
@@ -93,6 +117,8 @@ function createUserAccount(email, password, name, username){
 
       console.log(errorCode + errorMessage);
     });
+ */
+    
 }
 
 function logInUser(email, password){
@@ -101,7 +127,19 @@ function logInUser(email, password){
       // Signed in 
       const user = userCredential.user;
       // ...
-      console.log(user.name)
+      /* const dbRef = ref(getDatabase());
+      get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      }); */
+      
+      console.log(user.displayName)
+      console.log(user.email)
       console.log("user logged in")
       alert("Signed In!!")
     })
