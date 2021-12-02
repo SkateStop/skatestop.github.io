@@ -20,7 +20,7 @@
     <body style="font-family: 'Poppins', sans-serif;">
         <div class="navbar">
             <div class="wrapper">
-                <a href="#" class=" navlink open-button" onclick="openLocationForm()">Add Location</a>
+                <a href="#" class=" navlink open-button" onclick="openLocationForm(); closeLoginForm(); closesignupForm()">Add Location</a>
             </div>
             <div class="wrapper2">
                 <div class="logo-wrap">
@@ -34,7 +34,7 @@
                         <i class="fas fa-search" id="searchicon"></i>
                         <input type="search" onsearch="geocode({ address: document.getElementById('search').value })" name="fa-search" placeholder="Search..." id="search">
                     </form>
-                    <a href="#" class="navlink login" onclick="openLoginForm()">Sign In</a>
+                    <a href="#" class="navlink login" onclick="openLoginForm(); closeLocationForm(); closesignupForm()">Sign In</a>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
                         <input type="checkbox" value="remember-me" class="checkbox">Remember me
                     </div>
                     
-                    <p>New Member? <a href="#" class="cta" onclick="opensignupForm(); closeLoginForm()" style="margin: auto;">Sign up Here!</a></p>
+                    <p>New Member? <a href="#" class="cta" onclick="opensignupForm(); closeLoginForm()" style="margin: auto; color: white;">Sign up Here!</a></p>
                     <button type="submit" class="btn navlink login" id="signIn">Sign in</button>
                     <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
                     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
@@ -120,34 +120,28 @@
             <div class="popup" id="signupForm">
                 <form class="container"> 
                 <div id="signUp">
-                      <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
-                      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                    <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
                         
-                    <table>
-                        <tr>
-                        <td><label for="inputName" class="label-name">Name</label></td>
-                        <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus></td>
-                        </tr>
-                        
-                        <tr>
-                        <td><label for="inputEmail" class="label-email">Email Address</label></td>
-                        <td><input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required autofocus></td>
-                        </tr>
-                        
-                        <tr>
-                        <td><label for="inputUserName" class="label-username">Username</label></td>
-                        <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus></td>
-                        </tr>
+                    <div class="signin-wrapper"> 
+                        <label for="inputUserName" class="label-username">Username</label>
+                        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus>
+                    </div> 
 
-                        <tr>
-                        <td><label for="inputPassword" class="label-password">Password</label></td>
-                        <td><input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required></td>
-                        </tr>
+                    <div class="signin-wrapper">
+                        <label for="inputEmail" class="label-email">Email</label><br>
+                        <input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required autofocus>
+                    </div>   
 
-                        <tr>
-                        <td><label for="confirmPassword" class="label-conPassword">Confirm Password</label></td>
-                        <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required></td>
-                        </tr>
+                    <div class="signin-wrapper">    
+                        <label for="inputPassword" class="label-password">Password</label>
+                        <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
+                    </div>  
+
+                    <div class="signin-wrapper">    
+                        <label for="confirmPassword" class="label-conPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                    </div>
                     </table>
                     <!--
                       <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
