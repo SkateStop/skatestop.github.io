@@ -96,7 +96,6 @@
 
             <div class="popup" id="loginForm">
                 <form class="container">
-    
                     <img src="images/skatestoplogo_w.png" alt="logo" width="72" height="72">
                     <h1>Sign In</h1>
                     <div class="signin-wrapper">
@@ -110,13 +109,57 @@
                     <div class="checkbox mb-3">
                         <input type="checkbox" value="remember-me" class="checkbox">Remember me
                     </div>
-                    <p>New member? <a class="cta" href="signUp.html">Sign up here!</a></p>
-
+                    <a href="#" class=" navlink open-button" onclick="opensignupForm()" style="margin: auto;">New Member? Sign up Here!</a>
                     <button type="submit" class="btn navlink login" id="signIn">Sign in</button>
                     <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
                     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                   </form>
             </div>
+
+            <div class="popup" id="signupForm">
+                <form class="container"> 
+                <div id="signUp">
+                      <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
+                      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                        
+                          <p>
+                            <label for="inputName" class="label-name">Name</label>
+                            <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+                          </p>
+                          
+                          <p>
+                            <label for="inputEmail" class="label-email">Email Address</label></td>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                          </p>
+                          
+                          <p>
+                            <label for="inputUserName" class="label-username">Username</label></td>
+                            <input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus>
+                          </p>
+ 
+                          <p>
+                            <label for="inputPassword" class="label-password">Password</label></td>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                          </p>
+
+                          <p>
+                            <label for="confirmPassword" class="label-conPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                          </p>
+                      
+                    <!--
+                      <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
+                    -->
+                      <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
+                      <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+                      <button type="submit" class="btn navlink login" id="signUp">Sign Up</button>
+                      <button class="btn exit login" onclick="closesignupForm()">Cancel</button>
+                      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+                    </form>
+                    
+                  </div>
+
 
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>

@@ -13,3 +13,11 @@ function openLoginForm(){
 function closeLoginForm(){
   document.getElementById("loginForm").style.display = "none";
 }
+
+function opensignupForm(){
+  document.getElementById("signupForm").style.display = "inline";
+}
+
+function closesignupForm(){
+  document.getElementById("signupForm").style.display = "none";
+}

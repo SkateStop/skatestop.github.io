@@ -14,6 +14,15 @@
   right: 25vw;
 }
 
+#signupForm{
+  bottom: 5vh;
+  right: 40vw;
+}
+
+#signupForm{
+  margin-top: 0;
+}
+
 #loginForm{
   bottom: 33vh;
   right: 40vw;
