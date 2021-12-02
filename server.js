@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js';
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
@@ -50,29 +50,10 @@ e_app.post('/api/addLocation', function(req, res){
 e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);});
  */
 // Sign Up - Add user to firebase authentication
-document.getElementById("signUpBtn").addEventListener('click', function(){
-  const email = document.getElementById("inputEmail").value
-  const password = document.getElementById("inputPassword").value
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      // ...
-      console.log("created user")
-  })
-  .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorCode + errorMessage);
-  });
-})
 
-// Log In - Log in using firebase authentication with user that is already part of the users list
-document.getElementById("signUpBtn").addEventListener('click', function(){
-  const email = document.getElementById("inputEmail").value
-  const password = document.getElementById("inputPassword").value
-  signInWithEmailAndPassword(auth, email, password)
+
+function createUser(email, password){
+  createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
@@ -86,11 +67,26 @@ document.getElementById("signUpBtn").addEventListener('click', function(){
 
       console.log(errorCode + errorMessage);
     });
-})
+}
 
+function logInUser(email, password){
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // ...
+      console.log("user logged in")
+      alert("Signed In!!")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
+      console.log(errorCode + errorMessage);
+    });
+  }
 
-
+export {createUser, logInUser};
 /* function serverTest(){
     console.log("button triggered");
     
