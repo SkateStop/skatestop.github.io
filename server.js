@@ -1,6 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js';
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+import { getAuth, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
@@ -14,6 +15,14 @@ measurementId: "G-SHSFDD5QK7"
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const analytics = getAnalytics(app);
+
+function user(email, name, username){
+  this.email = email;
+  this.name = name;
+  this.username = username;
+}
+
 /* const database = app.database();
  *//* const db = d
  */
@@ -52,7 +61,9 @@ e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);}
 // Sign Up - Add user to firebase authentication
 
 
-function createUser(email, password){
+function createUserAccount(email, password, name, username){
+  console.log("created user")
+
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
@@ -67,6 +78,21 @@ function createUser(email, password){
 
       console.log(errorCode + errorMessage);
     });
+    updateProfile(auth.currentUser, {
+      name: name, username: username
+    }).then(() => {
+      // Profile updated!
+      // ...
+      console.log('profile updated')
+    }).catch((error) => {
+      // An error occurred
+      // ...
+
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      console.log(errorCode + errorMessage);
+    });
 }
 
 function logInUser(email, password){
@@ -75,6 +101,7 @@ function logInUser(email, password){
       // Signed in 
       const user = userCredential.user;
       // ...
+      console.log(user.name)
       console.log("user logged in")
       alert("Signed In!!")
     })
@@ -86,7 +113,7 @@ function logInUser(email, password){
     });
   }
 
-export {createUser, logInUser};
+export {createUserAccount, logInUser};
 /* function serverTest(){
     console.log("button triggered");
     

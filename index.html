@@ -100,16 +100,17 @@
                     <h1>Sign In</h1>
                     <div class="signin-wrapper">
                         <i class="fas fa-user fa-lg"></i>
-                        <input type="text" id="inputEmail" class="form-control" placeholder="Enter email" required autofocus>
+                        <input type="text" id="inputEmailLogin" class="form-control" placeholder="Enter email" required autofocus>
                     </div>
                     <div class="signin-wrapper">
                         <i class="fas fa-key fa-lg"></i>
-                        <input type="text" id="inputPassword" class="form-control" placeholder="Enter password" required>
+                        <input type="password" id="inputPasswordLogin" class="form-control" placeholder="Enter password" required>
                     </div>
                     <div class="checkbox mb-3">
                         <input type="checkbox" value="remember-me" class="checkbox">Remember me
                     </div>
-                    <a href="#" class=" navlink open-button" onclick="opensignupForm()" style="margin: auto;">New Member? Sign up Here!</a>
+                    
+                    <p>New Member? <a href="#" class="cta" onclick="opensignupForm(); closeLoginForm()" style="margin: auto;">Sign up Here!</a></p>
                     <button type="submit" class="btn navlink login" id="signIn">Sign in</button>
                     <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
                     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
@@ -122,31 +123,32 @@
                       <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
                       <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
                         
-                          <p>
-                            <label for="inputName" class="label-name">Name</label>
-                            <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
-                          </p>
-                          
-                          <p>
-                            <label for="inputEmail" class="label-email">Email Address</label></td>
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                          </p>
-                          
-                          <p>
-                            <label for="inputUserName" class="label-username">Username</label></td>
-                            <input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus>
-                          </p>
- 
-                          <p>
-                            <label for="inputPassword" class="label-password">Password</label></td>
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                          </p>
+                    <table>
+                        <tr>
+                        <td><label for="inputName" class="label-name">Name</label></td>
+                        <td><input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus></td>
+                        </tr>
+                        
+                        <tr>
+                        <td><label for="inputEmail" class="label-email">Email Address</label></td>
+                        <td><input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required autofocus></td>
+                        </tr>
+                        
+                        <tr>
+                        <td><label for="inputUserName" class="label-username">Username</label></td>
+                        <td><input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus></td>
+                        </tr>
 
-                          <p>
-                            <label for="confirmPassword" class="label-conPassword">Confirm Password</label>
-                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
-                          </p>
-                      
+                        <tr>
+                        <td><label for="inputPassword" class="label-password">Password</label></td>
+                        <td><input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required></td>
+                        </tr>
+
+                        <tr>
+                        <td><label for="confirmPassword" class="label-conPassword">Confirm Password</label></td>
+                        <td><input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required></td>
+                        </tr>
+                    </table>
                     <!--
                       <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
                     -->

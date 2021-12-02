@@ -15,11 +15,14 @@
 }
 
 #signupForm{
-  bottom: 5vh;
+  bottom: 33vh;
   right: 40vw;
+
+  /* bottom: 5vh;
+  right: 40vw; */
 }
 
-#signupForm{
+#signupForm h1{
   margin-top: 0;
 }
 

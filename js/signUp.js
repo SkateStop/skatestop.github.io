@@ -1,12 +1,15 @@
-import {createUser} from "../server.js"
+import {createUserAccount} from "../server.js"
+/* import { user } from "./login.js" */
 
 document.getElementById("signIn").addEventListener('click', function(){
     console.log("inside function")
-    const email = document.getElementById("inputEmail").value
-    const password = document.getElementById("inputPassword").value
+    const email = document.getElementById("inputEmailSignup").value
+    const password = document.getElementById("inputPasswordSignup").value
+    const name = document.getElementById("inputName").value
+    const username = document.getElementById("inputUserName").value
 
     if (validate_email(email) && validate_password(password)){
-        createUser(email, password)
+        createUserAccount(email, password, name, username)
     }
     else{
         return
