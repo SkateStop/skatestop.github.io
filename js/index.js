@@ -3,7 +3,6 @@
 //const database = firebase.database()
 
 
-
 let map, infoWindow, barnes,phillips,glasgow,handloff,geocoder;
 
 function initMap() {

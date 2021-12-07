@@ -1,3 +1,5 @@
+/* import {isUserLoggedIn} from '../server.js' */
+
 function openLocationForm() {
   document.getElementById("locationForm").style.display = "inline";
 }
@@ -21,3 +23,10 @@ function opensignupForm(){
 function closesignupForm(){
   document.getElementById("signupForm").style.display = "none";
 }
+
+function showLogOutBtn(){
+  if(isUserLoggedIn()){
+    
+  }
+}
+

@@ -17,12 +17,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
+const user = auth.currentUser;
 
-function user(email, name, username){
+function isUserLoggedIn(){
+  if(user != null){
+    return true
+  } else {
+    return false
+  }
+}
+
+/* function user(email, name, username){
   this.email = email;
   this.name = name;
   this.username = username;
-}
+} */
 
 /* const database = app.database();
  *//* const db = d
@@ -84,13 +93,6 @@ function createUserAccount(email, password, name, username){
     
           console.log(errorCode + errorMessage);
         });
-
-      /* const db = getDatabase();
-      set(ref(db, 'users/' + userId), {
-        username: username,
-        email: email,
-        name: name,
-      }); */
       // ...
       console.log("created user")
       alert("Signed In!!")
@@ -101,23 +103,6 @@ function createUserAccount(email, password, name, username){
 
       console.log(errorCode + errorMessage);
     });
-
-    /* updateProfile(auth.currentUser, {
-    displayName: username
-    }).then(() => {
-      // Profile updated!
-      // ...
-      console.log('profile updated')
-    }).catch((error) => {
-      // An error occurred
-      // ...
-
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      console.log(errorCode + errorMessage);
-    });
- */
     
 }
 
@@ -127,16 +112,6 @@ function logInUser(email, password){
       // Signed in 
       const user = userCredential.user;
       // ...
-      /* const dbRef = ref(getDatabase());
-      get(child(dbRef, `users/${userId}`)).then((snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      }).catch((error) => {
-        console.error(error);
-      }); */
       
       console.log(user.displayName)
       console.log(user.email)
@@ -151,7 +126,7 @@ function logInUser(email, password){
     });
   }
 
-export {createUserAccount, logInUser};
+export {createUserAccount, logInUser, isUserLoggedIn};
 /* function serverTest(){
     console.log("button triggered");
     
