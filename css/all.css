@@ -12,6 +12,10 @@
   text-rendering: auto;
   line-height: 1; }
 
+
+.fa-xs {
+  font-size: .75em; }
+  
 .fa-2x {
   font-size: 2em; }
 
@@ -29,6 +33,9 @@
   
 .fa-envelope:before {
   content: "\f0e0"; }
+
+.fa-external-link-alt:before {
+  content: "\f35d"; }
 
 .fa-lg {
   font-size: 1.33333em;

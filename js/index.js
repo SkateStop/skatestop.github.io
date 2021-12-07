@@ -3,7 +3,7 @@
 //const database = firebase.database()
 
 
-let map, infoWindow, barnes,phillips,glasgow,handloff,geocoder;
+let map, infoWindow, geocoder;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -113,39 +113,12 @@ function initMap() {
       }
     );
 
-    /*phillips= addMarker({lat :  39.66985532533391,lng : -75.7577820185161}, map);
-    glasgow= addMarker({lat :  39.608109531466724,lng : -75.73057593704098}, map);
-    handloff= addMarker({lat :  39.679362282770924,lng : -75.77111988050964}, map);
-    barnes= addMarker({lat :  39.683215263915216,lng : -75.7497534599226}, map);
-    
-    //clears sidebar when you click on anything but a marker
     map.addListener("click", () =>{
       content.innerHTML = '';
       document.getElementById("locationTitle").innerText = "Select a marker";
       document.getElementById("locationNavbar").style.display = "none";
     });
 
-    //HARD CODED SPOTS
-    glasgow.addListener("click", () =>{
-      content.innerHTML = '<img src="images/glasgow/glasgow1.jpg" class="spotPhoto"><img src="images/glasgow/glasgow2.jpg" class="spotPhoto"><img src="images/glasgow/glasgow3.jpg" class="spotPhoto"><img src="images/glasgow/glasgow5.jpg" class="spotPhoto"><img src="images/glasgow/glasgow4.jpg" class="spotPhoto">';
-      document.getElementById("locationTitle").innerText = "Glasgow Park";
-      document.getElementById("locationNavbar").style.display = "block";
-    });
-    phillips.addListener("click", () =>{
-      content.innerHTML = '<img src="images/phillips/phillips1.jpg" class="spotPhoto"><img src="images/phillips/phillips2.jpg" class="spotPhoto">';
-      document.getElementById("locationTitle").innerText = "Phillips Park";
-      document.getElementById("locationNavbar").style.display = "block";
-    });
-    handloff.addListener("click", () =>{
-      content.innerHTML = '<img src="images/handloff/handloff1.jpg" class="spotPhoto"><img src="images/handloff/handloff2.jpg" class="spotPhoto"><img src="images/handloff/handloff3.jpg" class="spotPhoto">';
-      document.getElementById("locationTitle").innerText = "Handloff Park";
-      document.getElementById("locationNavbar").style.display = "block";
-    });
-    barnes.addListener("click", () =>{
-      content.innerHTML = '<img src="images/barnes/barnes1.jpg" class="spotPhoto"><img src="images/barnes/barnes3.jpg" class="spotPhoto">';
-      document.getElementById("locationTitle").innerText = "Barnes & Noble";
-      document.getElementById("locationNavbar").style.display = "block";
-    });*/
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
