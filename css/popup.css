@@ -34,7 +34,7 @@
   margin-top: 0;
 }
 
-#loginForm i{
+#loginForm i, #signupForm i{
   left: 30px;
   color: grey;
 }
