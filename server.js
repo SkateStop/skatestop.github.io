@@ -71,7 +71,7 @@ e_app.listen(port, () => {console.log(`listening at http://localhost:${port}`);}
 // Sign Up - Add user to firebase authentication
 
 
-function createUserAccount(email, password, name, username){
+function createUserAccount(email, password, username){
   console.log("created user")
 
   createUserWithEmailAndPassword(auth, email, password)

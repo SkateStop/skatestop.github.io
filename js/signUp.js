@@ -18,11 +18,10 @@ function validate_password (password) {
 document.getElementById("signUpBtn").addEventListener('click', function(){
     const email = document.getElementById("inputEmailSignup").value
     const password = document.getElementById("inputPasswordSignup").value
-    const name = document.getElementById("inputName").value
     const username = document.getElementById("inputUserName").value
 
     if (validate_email(email) && validate_password(password)){
-        createUserAccount(email, password, name, username)
+        createUserAccount(email, password, username)
     }
     else{
         return
