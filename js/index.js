@@ -113,7 +113,7 @@ function initMap() {
       }
     );
 
-    phillips= addMarker({lat :  39.66985532533391,lng : -75.7577820185161}, map);
+    /*phillips= addMarker({lat :  39.66985532533391,lng : -75.7577820185161}, map);
     glasgow= addMarker({lat :  39.608109531466724,lng : -75.73057593704098}, map);
     handloff= addMarker({lat :  39.679362282770924,lng : -75.77111988050964}, map);
     barnes= addMarker({lat :  39.683215263915216,lng : -75.7497534599226}, map);
@@ -145,7 +145,7 @@ function initMap() {
       content.innerHTML = '<img src="images/barnes/barnes1.jpg" class="spotPhoto"><img src="images/barnes/barnes3.jpg" class="spotPhoto">';
       document.getElementById("locationTitle").innerText = "Barnes & Noble";
       document.getElementById("locationNavbar").style.display = "block";
-    });
+    });*/
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
