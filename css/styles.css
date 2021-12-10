@@ -120,14 +120,25 @@ form{
     margin: 0;
     text-align: center;
     overflow-y: scroll;
-}#locationTitle{
+}
+
+#locationTitle{
     margin: 0;
-}.navbarDispaly{
+}
+
+.navbarDisplay{
     object-fit: contain;
-}.locationNavbar{
+}
+
+.navbarDisplay #text{
+    display: none;
+}
+.locationNavbar{
     padding-bottom: 1vh;
     padding-top: 1vh;
-}.sideNavButtons{
+}
+
+.sideNavButtons{
     color: white;
     font-size: large;
     padding: 0;
@@ -135,22 +146,33 @@ form{
     padding-right: 5px;
     border: none;
     background: none;
-}.sideNavButtons:hover{
+}
+
+.sideNavButtons:hover{
     background-color: #424242;
     border-radius: 5px;
-}.spotPhoto{
+}
+
+.spotPhoto{
     width: 100%;
-}.directionButton{
+}
+
+.directionButton{
     background-color: grey;
     color: white;
     border: 2px solid #424242;
     padding: 5px;
     margin-top: 30vh;
-}.directionButton:hover{
+}
+
+.directionButton:hover{
     background-color: #424242;
     cursor: pointer;
 }
 
+#addMedia{
+    margin-top: 1.3vh;
+}
 #map{
     min-width: 75vw;
 }
@@ -182,7 +204,6 @@ form{
     font-size: 18px;
 }
 
-   
 .button{
     background-color: rgb(255, 255, 255);
     border-radius:0%;

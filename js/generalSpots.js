@@ -63,7 +63,7 @@ function getImages(data){
     }).catch((error) => {
         console.log(error);
     });
-
+    return null;
 }
 
 function getVideos(data){
@@ -87,14 +87,18 @@ function getVideos(data){
     }).catch((error) => {
         console.log(error);
     });
+
+    return null;
 }
 
 clipBtn.addEventListener('click', () => {
     content.innerHTML = getVideos(document.getElementById("locationTitle").innerText);
+    document.getElementById("addMedia").innerText = "Add Video";
 });
 
 picBtn.addEventListener('click', () => {
     content.innerHTML = getImages(document.getElementById("locationTitle").innerText);
+    document.getElementById("addMedia").innerText = "Add photo";
 });
 
 getGenSpots();
