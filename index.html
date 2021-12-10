@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/popup.css">
         <link href="css/login.css" rel="stylesheet">
-        
-
+       
         <title>SkateStop</title>
     </head>
+   
     <body style="font-family: 'Poppins', sans-serif;">
         <div class="navbar">
             <div class="wrapper">
@@ -75,20 +75,26 @@
         </div>
 
             <div class="popup" id="locationForm">
-                <form action="/action_page.php" class="container">
+                <form class="container">
                     <h1>Add Location</h1>
                     <label for="parkName"><b>Name:</b></label><br>
-                    <input type="text" placeholder="Park Name"  name="parkName">
-                    <label for="parktype"><br><b>Park Type:</b></label><br>
-                    <select name="parktype" id="parktype">
-                        <option>Street</option>
-                        <option>Park</option>
-                    </select>
+                    <input type="text" placeholder="Park Name" name="parkName" id="parkn" required>
                     <p> 
-                        <label for="Address"><b>Address:</b></label><br>
-                        <input type="text" placeholder="Enter Address" name="Address" required>
+                        <label for="streetAddress"><b>Street Address:</b></label><br>
+                        <input type="text" placeholder="Enter Street Address" name="streetAddress" id="streetaddy" required>
                     </p>
-                    <button type="submit" class="btn navlink login">Add Location</button>
+                    <p>
+                        <label for="city"><b>City:</b></label><br>
+                        <input type="text" placeholder="Enter City" name="city" id="cityaddy" required>
+                    <p>
+                    <p>
+                        <label for="state"><b>State:</b></label><br>
+                        <input type="text" placeholder="Enter State" name="state" id="state" required>
+                    </p>
+                        <label for="zipcode"><b>Zipcode:</b></label><br>
+                        <input type="text" placeholder="Enter Zipcode" name="zipcode" id="zipcode" required>
+                    </p>
+                    <button type="submit" class="btn navlink login" id="addLoc" >Add Location</button>
                     <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
                 </form>
             </div>
@@ -161,7 +167,8 @@
                     </form>
                     
                   </div>
-
+                  
+        <script src="js/locations.js"></script>
         <script src="js/popup.js"></script>
         <script type="module" src="server.js"></script>
         <script type="module" src="js/login.js"></script>

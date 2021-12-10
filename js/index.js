@@ -3,7 +3,8 @@
 //const database = firebase.database()
 
 
-let map, infoWindow, geocoder;
+let map, infoWindow;
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
