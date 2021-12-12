@@ -67,7 +67,7 @@
         </div>
 
             <div class="popup" id="locationForm">
-                <form class="container" onsubmit="return false">
+                <form class="container" onsubmit="this.reset(); return false">
                     <h1>Add Location</h1>
                     <label for="parkName"><b>Name:</b></label><br>
                     <input type="text" placeholder="Park Name" name="parkName" id="parkn" required>
@@ -159,12 +159,12 @@
                     
             </div>
                   
-        <script src="js/locations.js"></script>
         <script src="js/popup.js"></script>
         <script type="module" src="server.js"></script>
         <script type="module" src="js/login.js"></script>
         <script type="module" src="js/signUp.js"></script>
         <script type="module" src="js/generalSpots.js"></script>
+        <script type="module" src="js/locations.js"></script>
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>
     </body>

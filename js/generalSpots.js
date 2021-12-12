@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js';
-import { collection, query, where, getDocs , getFirestore} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
-import { getStorage, ref, listAll, getDownloadURL, uploadBytesResumable, updateMetadata } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
+import { collection, query, where, getDocs , getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
+import { getStorage, ref, listAll, getDownloadURL, uploadBytesResumable } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
@@ -115,6 +115,35 @@ function onFileChange(e){
     });
 }
 
+document.getElementById("addLoc").addEventListener('click', function(){
+    const db = getFirestore();
+  
+    var streetaddress = document.getElementById("streetaddy").value;
+    var cityaddress = document.getElementById("cityaddy").value;
+    var state = document.getElementById("state").value;
+    var zipcode = document.getElementById("zipcode").value;
+    var fulladdress =  (streetaddress +", " + cityaddress + ", "+ state +" "+zipcode);
+  
+    var geocoder = new google.maps.Geocoder();
+  
+    geocoder.geocode( {'address': fulladdress}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat();
+        var longitude = results[0].geometry.location.lng();
+        
+        setDoc(doc(db, "genspots", streetaddress), {
+          lat: latitude,
+          long: longitude,
+          name: streetaddress
+        }).catch((error) => {
+          console.log(error);
+        });
+        
+        getGenSpots();
+      } 
+    });
+  });
+  
 clipBtn.addEventListener('click', () => {
     content.innerHTML = getVideos(document.getElementById("locationTitle").innerText);
 });
