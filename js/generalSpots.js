@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js';
 import { collection, query, where, getDocs , getFirestore} from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"; 
-import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
+import { getStorage, ref, listAll, getDownloadURL, uploadBytesResumable, updateMetadata } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCa9n0xUYZX0ZbKG3MoB1K8mh4Cz1eg7XI",
@@ -87,18 +87,44 @@ function getVideos(data){
     }).catch((error) => {
         console.log(error);
     });
-
     return null;
+}
+
+//file upload
+function onFileChange(e){
+    let data = document.getElementById("locationTitle").innerText;
+    let storageRef;
+    const file = e.target.files[0];
+    const storage = getStorage();
+    const extension = file.name.split(".").pop();
+
+    //finding the right directory in the DB to upload file
+    if(extension == 'mp4' || extension == 'm4a' || extension == 'mov'){ 
+        storageRef = ref(storage, data + "/video/" + file.name);
+    }else if(extension == 'jpg' || extension == 'png'){ 
+        storageRef = ref(storage, data + "/img/" + file.name);
+    }
+    
+    //uploading file
+    uploadBytesResumable(storageRef, file).then(() => {
+        console.log("Uploaded file", file.name, "to", storageRef);
+        document.getElementById('upload-confirmation').style.display = 'block';
+        setTimeout(() => {  document.getElementById('upload-confirmation').style.display = 'none'; }, 2000);
+        
+
+    });
 }
 
 clipBtn.addEventListener('click', () => {
     content.innerHTML = getVideos(document.getElementById("locationTitle").innerText);
-    document.getElementById("addMedia").innerText = "Add Video";
 });
 
 picBtn.addEventListener('click', () => {
     content.innerHTML = getImages(document.getElementById("locationTitle").innerText);
-    document.getElementById("addMedia").innerText = "Add photo";
+});
+
+fileInput.addEventListener('change', (file) => {
+    onFileChange(file);
 });
 
 getGenSpots();

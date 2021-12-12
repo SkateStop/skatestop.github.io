@@ -170,8 +170,22 @@ form{
     cursor: pointer;
 }
 
-#addMedia{
+#file-upload{
     margin-top: 1.3vh;
+}
+
+#file-upload::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+#file-upload::before{
+    content: "Add Files";
+}
+
+#upload-confirmation{
+    display: none;
+    margin: 0;
+    font-size: 15px;
 }
 #map{
     min-width: 75vw;

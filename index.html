@@ -47,9 +47,10 @@
                     <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
                     <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
 <!--                     <input type="button" value="Reviews" class="sideNavButtons" id="reviewBtn"> -->
-                    <a target="_blank" value="Directions" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a>
+                    <a target="_blank" href="#" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a>
                     <div>
-                        <button class="btn navlink login" id="addMedia">Add photo</button>
+                        <input type="file" class="btn navlink login" id="file-upload">
+                        <p id="upload-confirmation">File uploaded!</p>
                     </div>
                 </div>
                 
@@ -66,7 +67,7 @@
         </div>
 
             <div class="popup" id="locationForm">
-                <form class="container">
+                <form class="container" onsubmit="return false">
                     <h1>Add Location</h1>
                     <label for="parkName"><b>Name:</b></label><br>
                     <input type="text" placeholder="Park Name" name="parkName" id="parkn" required>
@@ -84,8 +85,7 @@
                     </p>
                         <label for="zipcode"><b>Zipcode:</b></label><br>
                         <input type="text" placeholder="Enter Zipcode" name="zipcode" id="zipcode" required>
-                    </p>
-                    <button type="submit" class="btn navlink login" id="addLoc" >Add Location</button>
+                    <button class="btn navlink login" id="addLoc" >Add Location</button>
                     <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
                 </form>
             </div>
@@ -115,49 +115,49 @@
 
             <div class="popup" id="signupForm">
                 <form class="container"> 
-                <div id="signUp">
-                    <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
-                    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-                        
-                    <div class="signin-wrapper"> 
-                        <label for="inputUserName" class="label-username">
-                            <i class="fas fa-user fa-lg"></i>
-                        </label>
-                        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required autofocus>
-                    </div> 
+                    <div id="signUp">
+                        <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                            
+                        <div class="signin-wrapper"> 
+                            <label for="inputUserName" class="label-username">
+                                <i class="fas fa-user fa-lg"></i>
+                            </label>
+                            <input type="text" id="inputUserName" class="form-control" placeholder="Username" required>
+                        </div> 
 
-                    <div class="signin-wrapper">
-                        <label for="inputEmail" class="label-email">
-                            <i class="fas fa-envelope fa-lg"></i>
-                        </label>
-                        <input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required autofocus>
-                    </div>   
+                        <div class="signin-wrapper">
+                            <label for="inputEmail" class="label-email">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </label>
+                            <input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required>
+                        </div>   
 
-                    <div class="signin-wrapper">    
-                        <label for="inputPassword" class="label-password">
-                            <i class="fas fa-key fa-lg"></i>
-                        </label>
-                        <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
-                    </div>  
+                        <div class="signin-wrapper">    
+                            <label for="inputPassword" class="label-password">
+                                <i class="fas fa-key fa-lg"></i>
+                            </label>
+                            <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
+                        </div>  
 
-                    <div class="signin-wrapper">    
-                        <label for="confirmPassword" class="label-conPassword">
-                            <i class="fas fa-key fa-lg"></i>
-                        </label>
-                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                        <div class="signin-wrapper">    
+                            <label for="confirmPassword" class="label-conPassword">
+                                <i class="fas fa-key fa-lg"></i>
+                            </label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                        </div>
+                        <!--
+                        <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
+                        -->
+                        <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
+                        <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+                        <button type="submit" class="btn navlink login" id="signUpBtn">Sign Up</button>
+                        <button class="btn exit login" onclick="closesignupForm()">Cancel</button>
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                     </div>
-                    <!--
-                      <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
-                    -->
-                      <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
-                      <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
-                      <button type="submit" class="btn navlink login" id="signUpBtn">Sign Up</button>
-                      <button class="btn exit login" onclick="closesignupForm()">Cancel</button>
-                      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
-                    </form>
+                </form>
                     
-                  </div>
+            </div>
                   
         <script src="js/locations.js"></script>
         <script src="js/popup.js"></script>

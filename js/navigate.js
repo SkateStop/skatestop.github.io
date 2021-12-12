@@ -4,7 +4,7 @@ let clipBtn = document.querySelector("#clipBtn");
 let reviewBtn = document.querySelector("#reviewBtn");
 let dirBtn = document.querySelector("#dirBtn");
 let content = document.querySelector(".navbarDisplay");
-
+let fileInput = document.querySelector("#file-upload");
 
 /*
 reviewBtn.addEventListener('click', () => {
@@ -12,9 +12,3 @@ reviewBtn.addEventListener('click', () => {
 });
 
 */
-
-dirBtn.addEventListener('click', () => {
-    content.innerHTML = '<input type="button" value="Open in Google Maps" class="directionButton">';
-});
-
-//PHILLIPS PARK
