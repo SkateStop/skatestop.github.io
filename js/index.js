@@ -3,22 +3,26 @@
 //const database = firebase.database()
 
 
-
+// Gets the elements in the document, assigning them to a variable
 let intro = document.querySelector('.intro');
 let logo = document.querySelector('.logo-header');
 let logoSpan = document.querySelectorAll('.logo');
  
+// When the DOM is loaded on the window, 
+// sets timeouts for the skatestop logo
 window.addEventListener('DOMContentLoaded', () =>{
  setTimeout(() => {
   
    logoSpan.forEach((span, idx) =>{
     
+    // sets timeout and loads the skatestop text
      setTimeout(()=>{
      
        span.classList.add('active');
      }, (idx + 1) * 400)
    });
  
+   //sets timeout for the active skatestop text, then fades it with a transition.
    setTimeout(() => {
      logoSpan.forEach((span, idx) =>{
  
@@ -30,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () =>{
      })
    }, 2000);
  
+   // fades out into the welcome page 
    setTimeout(() => {
      intro.style.top = '-100vh';
    }, 2300)
@@ -37,16 +42,17 @@ window.addEventListener('DOMContentLoaded', () =>{
  })
 })
 
-
+//Variable to hold map and window for errors
 let map, infoWindow;
 
-
+//Initialize map function necessary for google maps API to work
 function initMap() {
+  //Initialize map centered on Newark DE as default with specified zoom out. Showed in the div labeled 'map'
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 39.679811832086635, lng: -75.75088279192195 },
     zoom: 12,
     zoom: 12,
-      styles: [
+      styles: [ //style sheet for night mode on map
         { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
         { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
         { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
@@ -127,10 +133,12 @@ function initMap() {
         },
       ],
   });
+  //Create a geocoder object instance for the address lookup
   geocoder=new google.maps.Geocoder();
 
-  // Try HTML5 geolocation.
+  // Try HTML5 geolocation through the internet navigator
   if (navigator.geolocation) {
+    //Get the current position and sets the map center to the corrdinates
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const pos = {
@@ -139,23 +147,25 @@ function initMap() {
         };
         map.setCenter(pos);
       },
+      //If theres an error, handle the location error using the map and infowindow
       () => {
         handleLocationError(true, infoWindow, map.getCenter());
       }
     );
-
+    //Event listener to make simple UI changes when viewer clicks on map
     map.addListener("click", () =>{
       content.innerHTML = '';
       document.getElementById("locationTitle").innerText = "Select a marker";
       document.getElementById("locationNavbar").style.display = "none";
     });
-
+  //Else if the navigator doesn't show location, handle the error
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
 
+//Function for handling location error. Prints the error on the map and moves on
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -165,7 +175,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   );
   infoWindow.open(map);
 }
-
+//Function for adding marker. Accepts the map to be placed and the coordinates of the new marker.
+//Returns the marker instance that has been created and placed on the map
 function addMarker(coordinates,placeMap){
   mark = new google.maps.Marker({
     position: coordinates,
@@ -181,7 +192,8 @@ function buttonthing(){
   //xhttp.open("POST", "/api/getUsers", true);
   //xhttp.send();
 } 
-
+//Function for pulling geocode info. Queries the geocoder with the input request and then sets the map center on the result.
+//If nothing returned from Geocode then sends an error alert.
 function geocode(request){
   console.log(request);
   geocoder

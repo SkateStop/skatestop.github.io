@@ -1,12 +1,6 @@
 import {logInUser} from '../server.js';
 
-function user(email, name, username){
-  this.email = email;
-  this.name = name;
-  this.username = username;
-}
-export {user};
-
+// Event Listner for the login button to log user in
 document.getElementById("signIn").addEventListener('click', function(){
     console.log("inside function")
     const email = document.getElementById("inputEmailLogin").value

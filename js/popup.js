@@ -1,9 +1,10 @@
 /* import {isUserLoggedIn} from '../server.js' */
 
+// open location form popup
 function openLocationForm() {
   document.getElementById("locationForm").style.display = "inline";
 }
-  
+// close location form popup
 function closeLocationForm() {
   document.getElementById("locationForm").style.display = "none";
 }
