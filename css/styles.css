@@ -4,6 +4,10 @@ body{
     background-color: #181818;
 }
 
+#page-wrapper{
+    display: none;
+}
+
 .navbar{
     background-color: #181818;
     height: 10vh;

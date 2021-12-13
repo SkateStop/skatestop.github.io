@@ -17,176 +17,175 @@
     </head>
    
     <body style="font-family: 'Poppins', sans-serif;">
-
-        <div class="intro">
-            <h1 class="logo-header">
-                <span class="logo">SKATE</span><span class="logo">STOP</span>
-            </h1>
-        </div>
-  
-        <header id="showcase">
-            <div class="welcomediv">
-            <h1>Welcome To Skatestop!</h1>
-            <p><strong>SkateStop is a website that allows skate enthusiasts to discover and explore new skate stops in different areas. We want
-                skaters to be able to use this app to find new spots that they could potentially use to show off their experiences! For locations,
-                they will be able to use different resources to upload pictures & videos, as well as be able to receive navigation
-                in order to arrive at a selected destination.
-            </strong></p>
-            <button href="#" class="button" id="welcome-btn">LETS GO</button>
+            <div class="intro">
+                <h1 class="logo-header">
+                    <span class="logo">SKATE</span><span class="logo">STOP</span>
+                </h1>
             </div>
-          </header>
-
-        <div class="navbar">
-            <div class="wrapper">
-                <a href="#" class=" navlink open-button" onclick="openLocationForm(); closeLoginForm(); closesignupForm()">Add Location</a>
-            </div>
-            <div class="wrapper2">
-                <div class="logo-wrap">
-                    <img src="images/skatestoplogo_w.png" alt="logo" class="logo-img">
-                    <h1>SkateStop</h1>
+    
+            <header id="showcase">
+                <div class="welcomediv">
+                <h1>Welcome To Skatestop!</h1>
+                <p><strong>SkateStop is a website that allows skate enthusiasts to discover and explore new skate stops in different areas. We want
+                    skaters to be able to use this app to find new spots that they could potentially use to show off their experiences! For locations,
+                    they will be able to use different resources to upload pictures & videos, as well as be able to receive navigation
+                    in order to arrive at a selected destination.
+                </strong></p>
+                <button href="#" class="button" id="welcome-btn">LETS GO</button>
                 </div>
-            </div>
-            <div class="wrapper">
-                <div class="features">
-                    <form id="formid" onsubmit="return false">
-                        <i class="fas fa-search" id="searchicon"></i>
-                        <input type="search" onsearch="geocode({ address: document.getElementById('search').value })" name="fa-search" placeholder="Search..." id="search">
-                    </form>
-                    <a href="#" class="navlink login" onclick="openLoginForm(); closeLocationForm(); closesignupForm()">Sign In</a>
+            </header>
+            <div id="page-wrapper">
+
+            <div class="navbar">
+                <div class="wrapper">
+                    <a href="#" class=" navlink open-button" onclick="openLocationForm(); closeLoginForm(); closesignupForm()">Add Location</a>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="mainBody">
-            <div class="infoPanel">
-
-                <h1 id="locationTitle" class="locationNavbar">Select a marker</h1>
-
-                <div id="locationNavbar" class="locationNavbar" style="display: none;">
-                    <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
-                    <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
-<!--                     <input type="button" value="Reviews" class="sideNavButtons" id="reviewBtn"> -->
-                    <!-- <a target="_blank" href="#" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a> -->
-                    <div>
-                        <input type="file" class="btn navlink login" id="file-upload">
-                        <p id="upload-confirmation">File uploaded!</p>
+                <div class="wrapper2">
+                    <div class="logo-wrap">
+                        <img src="images/skatestoplogo_w.png" alt="logo" class="logo-img">
+                        <h1>SkateStop</h1>
                     </div>
                 </div>
-                
-
-                <div class="navbarDisplay">
-                    
+                <div class="wrapper">
+                    <div class="features">
+                        <form id="formid" onsubmit="return false">
+                            <i class="fas fa-search" id="searchicon"></i>
+                            <input type="search" onsearch="geocode({ address: document.getElementById('search').value })" name="fa-search" placeholder="Search..." id="search">
+                        </form>
+                        <a href="#" class="navlink login" onclick="openLoginForm(); closeLocationForm(); closesignupForm()">Sign In</a>
+                    </div>
                 </div>
-            
-            </div>
-                <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApjYIbQSIoRLNps9A1Mx3ZoVr6NdZD3xw&callback=initMap&v=weekly"
-                    async
-            ></script>
-        </div>
 
-            <div class="popup" id="locationForm">
-                <form class="container" onsubmit="this.reset(); return false">
-                    <h1>Add Location</h1>
-                    <label for="parkName"><b>Name:</b></label><br>
-                    <input type="text" placeholder="Park Name" name="parkName" id="parkn" required>
-                    <p> 
-                        <label for="streetAddress"><b>Street Address:</b></label><br>
-                        <input type="text" placeholder="Enter Street Address" name="streetAddress" id="streetaddy" required>
-                    </p>
-                    <p>
-                        <label for="city"><b>City:</b></label><br>
-                        <input type="text" placeholder="Enter City" name="city" id="cityaddy" required>
-                    </p>
-                    <p>
-                        <label for="state"><b>State:</b></label><br>
-                        <input type="text" placeholder="Enter State" name="state" id="state" required>
-                    </p>
-                    <p>
-                        <label for="zipcode"><b>Zipcode:</b></label><br>
-                        <input type="text" placeholder="Enter Zipcode" name="zipcode" id="zipcode" required>
-                    </p>
-                    <button class="btn login" id="addLoc" >Add Location</button>
-                    <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
-                </form>
             </div>
 
-            <div class="popup" id="loginForm">
-                <form class="container">
-                    <img src="images/skatestoplogo_w.png" alt="logo" width="72" height="72">
-                    <h1>Sign In</h1>
-                    <div class="signin-wrapper">
-                        <i class="fas fa-user fa-lg"></i>
-                        <input type="text" id="inputEmailLogin" class="form-control" placeholder="Enter email" required autofocus>
-                    </div>
-                    <div class="signin-wrapper">
-                        <i class="fas fa-key fa-lg"></i>
-                        <input type="password" id="inputPasswordLogin" class="form-control" placeholder="Enter password" required>
-                    </div>
-                    <div class="checkbox mb-3">
-                        <input type="checkbox" value="remember-me" class="checkbox">Remember me
-                    </div>
-                    
-                    <p>New Member? <a href="#" class="cta" onclick="opensignupForm(); closeLoginForm()" style="margin: auto; color: white;">Sign up Here!</a></p>
-                    <button type="submit" class="btn navlink login" id="signIn">Sign in</button>
-                    <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
-                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                  </form>
-            </div>
+            <div class="mainBody">
+                <div class="infoPanel">
 
-            <div class="popup" id="signupForm">
-                <form class="container"> 
-                    <div id="signUp">
-                        <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
-                        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-                            
-                        <div class="signin-wrapper"> 
-                            <label for="inputUserName" class="label-username">
-                                <i class="fas fa-user fa-lg"></i>
-                            </label>
-                            <input type="text" id="inputUserName" class="form-control" placeholder="Username" required>
-                        </div> 
+                    <h1 id="locationTitle" class="locationNavbar">Select a marker</h1>
 
-                        <div class="signin-wrapper">
-                            <label for="inputEmail" class="label-email">
-                                <i class="fas fa-envelope fa-lg"></i>
-                            </label>
-                            <input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required>
-                        </div>   
-
-                        <div class="signin-wrapper">    
-                            <label for="inputPassword" class="label-password">
-                                <i class="fas fa-key fa-lg"></i>
-                            </label>
-                            <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
-                        </div>  
-
-                        <div class="signin-wrapper">    
-                            <label for="confirmPassword" class="label-conPassword">
-                                <i class="fas fa-key fa-lg"></i>
-                            </label>
-                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                    <div id="locationNavbar" class="locationNavbar" style="display: none;">
+                        <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
+                        <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
+                    <!--<input type="button" value="Reviews" class="sideNavButtons" id="reviewBtn"> -->
+                        <!-- <a target="_blank" href="#" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a> -->
+                        <div>
+                            <input type="file" class="btn navlink login" id="file-upload">
+                            <p id="upload-confirmation">File uploaded!</p>
                         </div>
-                        <!--
-                        <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
-                        -->
-                        <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
-                        <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
-                        <button type="submit" class="btn navlink login" id="signUpBtn">Sign Up</button>
-                        <button class="btn exit login" onclick="closesignupForm()">Cancel</button>
-                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                     </div>
-                </form>
                     
+
+                    <div class="navbarDisplay">
+                        
+                    </div>
+                
+                </div>
+                    <div id="map"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApjYIbQSIoRLNps9A1Mx3ZoVr6NdZD3xw&callback=initMap&v=weekly"
+                        async
+                ></script>
             </div>
-                  
+
+                <div class="popup" id="locationForm">
+                    <form class="container" onsubmit="this.reset(); return false">
+                        <h1>Add Location</h1>
+                        <label for="parkName"><b>Name:</b></label><br>
+                        <input type="text" placeholder="Park Name" name="parkName" id="parkn" required>
+                        <p> 
+                            <label for="streetAddress"><b>Street Address:</b></label><br>
+                            <input type="text" placeholder="Enter Street Address" name="streetAddress" id="streetaddy" required>
+                        </p>
+                        <p>
+                            <label for="city"><b>City:</b></label><br>
+                            <input type="text" placeholder="Enter City" name="city" id="cityaddy" required>
+                        </p>
+                        <p>
+                            <label for="state"><b>State:</b></label><br>
+                            <input type="text" placeholder="Enter State" name="state" id="state" required>
+                        </p>
+                        <p>
+                            <label for="zipcode"><b>Zipcode:</b></label><br>
+                            <input type="text" placeholder="Enter Zipcode" name="zipcode" id="zipcode" required>
+                        </p>
+                        <button class="btn login" id="addLoc" >Add Location</button>
+                        <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
+                    </form>
+                </div>
+
+                <div class="popup" id="loginForm">
+                    <form class="container">
+                        <img src="images/skatestoplogo_w.png" alt="logo" width="72" height="72">
+                        <h1>Sign In</h1>
+                        <div class="signin-wrapper">
+                            <i class="fas fa-user fa-lg"></i>
+                            <input type="text" id="inputEmailLogin" class="form-control" placeholder="Enter email" required autofocus>
+                        </div>
+                        <div class="signin-wrapper">
+                            <i class="fas fa-key fa-lg"></i>
+                            <input type="password" id="inputPasswordLogin" class="form-control" placeholder="Enter password" required>
+                        </div>
+                        <div class="checkbox mb-3">
+                            <input type="checkbox" value="remember-me" class="checkbox">Remember me
+                        </div>
+                        
+                        <p>New Member? <a href="#" class="cta" onclick="opensignupForm(); closeLoginForm()" style="margin: auto; color: white;">Sign up Here!</a></p>
+                        <button type="submit" class="btn navlink login" id="signIn">Sign in</button>
+                        <button class="btn exit login" onclick="closeLoginForm()">Cancel</button>
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    </form>
+                </div>
+
+                <div class="popup" id="signupForm">
+                    <form class="container"> 
+                        <div id="signUp">
+                            <img class="mb-4" src="images/skatestoplogo_w.png" alt="" width="72" height="72">
+                            <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+                                
+                            <div class="signin-wrapper"> 
+                                <label for="inputUserName" class="label-username">
+                                    <i class="fas fa-user fa-lg"></i>
+                                </label>
+                                <input type="text" id="inputUserName" class="form-control" placeholder="Username" required>
+                            </div> 
+
+                            <div class="signin-wrapper">
+                                <label for="inputEmail" class="label-email">
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                </label>
+                                <input type="email" id="inputEmailSignup" class="form-control" placeholder="Email address" required>
+                            </div>   
+
+                            <div class="signin-wrapper">    
+                                <label for="inputPassword" class="label-password">
+                                    <i class="fas fa-key fa-lg"></i>
+                                </label>
+                                <input type="password" id="inputPasswordSignup" class="form-control" placeholder="Password" required>
+                            </div>  
+
+                            <div class="signin-wrapper">    
+                                <label for="confirmPassword" class="label-conPassword">
+                                    <i class="fas fa-key fa-lg"></i>
+                                </label>
+                                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                            </div>
+                            <!--
+                            <input id="signUpBtn" type="submit" style="border: 2px solid white;" value="Sign up">
+                            -->
+                            <!-- <input type="submit" id="signup" value="Submit" onclick="createUser()"> -->
+                            <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+                            <button type="submit" class="btn navlink login" id="signUpBtn">Sign Up</button>
+                            <button class="btn exit login" onclick="closesignupForm()">Cancel</button>
+                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        </div>
+                    </form>
+                        
+                </div>
+        </div>
         <script src="js/popup.js"></script>
         <script type="module" src="server.js"></script>
         <script type="module" src="js/login.js"></script>
         <script type="module" src="js/signUp.js"></script>
         <script type="module" src="js/generalSpots.js"></script>
-        <script type="module" src="js/locations.js"></script>
         <script src="js/index.js"></script>
         <script src="js/navigate.js"></script>
     </body>

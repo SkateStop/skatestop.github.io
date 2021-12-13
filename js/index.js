@@ -229,4 +229,5 @@ let welcomeButton = document.getElementById('welcome-btn');
 welcomeButton.addEventListener("click", () => {
   console.log('test');
   document.getElementById('showcase').style.display = "none";
+  document.getElementById('page-wrapper').style.display = "block";
 })
