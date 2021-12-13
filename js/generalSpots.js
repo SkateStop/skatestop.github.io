@@ -33,7 +33,7 @@ function getGenSpots(){
                 marker.addListener("click", () =>{
                     document.getElementById("locationTitle").innerText = data.name;
                     document.getElementById("locationNavbar").style.display = "block";
-                    document.getElementById("dirBtn").setAttribute("href", data.dir);
+                    //document.getElementById("dirBtn").setAttribute("href", data.dir);
                     getImages(document.getElementById("locationTitle").innerText);
                 });
             }

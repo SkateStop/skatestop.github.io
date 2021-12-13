@@ -47,7 +47,7 @@
                     <input type="button" value="Pictures" class="sideNavButtons" id="picBtn">
                     <input type="button" value="Clips" class="sideNavButtons" id="clipBtn">
 <!--                     <input type="button" value="Reviews" class="sideNavButtons" id="reviewBtn"> -->
-                    <a target="_blank" href="#" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a>
+                    <!-- <a target="_blank" href="#" class="sideNavButtons" id="dirBtn"><b>Directions</b> <i class="fas fa-xs fa-external-link-alt"></i></a> -->
                     <div>
                         <input type="file" class="btn navlink login" id="file-upload">
                         <p id="upload-confirmation">File uploaded!</p>
@@ -78,14 +78,16 @@
                     <p>
                         <label for="city"><b>City:</b></label><br>
                         <input type="text" placeholder="Enter City" name="city" id="cityaddy" required>
-                    <p>
+                    </p>
                     <p>
                         <label for="state"><b>State:</b></label><br>
                         <input type="text" placeholder="Enter State" name="state" id="state" required>
                     </p>
+                    <p>
                         <label for="zipcode"><b>Zipcode:</b></label><br>
                         <input type="text" placeholder="Enter Zipcode" name="zipcode" id="zipcode" required>
-                    <button class="btn navlink login" id="addLoc" >Add Location</button>
+                    </p>
+                    <button class="btn login" id="addLoc" >Add Location</button>
                     <button class="btn exit login" onclick="closeLocationForm()">Cancel</button>
                 </form>
             </div>
