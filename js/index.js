@@ -127,7 +127,6 @@ function initMap() {
         },
       ],
   });
-  infoWindow = new google.maps.InfoWindow();
   geocoder=new google.maps.Geocoder();
 
   // Try HTML5 geolocation.
@@ -138,10 +137,6 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent("Location found.");
-        infoWindow.open(map);
         map.setCenter(pos);
       },
       () => {
@@ -227,7 +222,6 @@ document.onclick = function(e){
 let welcomeButton = document.getElementById('welcome-btn');
 
 welcomeButton.addEventListener("click", () => {
-  console.log('test');
   document.getElementById('showcase').style.display = "none";
   document.getElementById('page-wrapper').style.display = "block";
 })
