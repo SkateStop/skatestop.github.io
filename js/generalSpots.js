@@ -131,6 +131,7 @@ function onFileChange(e){
 document.getElementById("addLoc").addEventListener('click', function(){
     const db = getFirestore();
     // gets user input values
+    var parkname = document.getElementById("parkn").value;
     var streetaddress = document.getElementById("streetaddy").value;
     var cityaddress = document.getElementById("cityaddy").value;
     var state = document.getElementById("state").value;
@@ -145,10 +146,10 @@ document.getElementById("addLoc").addEventListener('click', function(){
         var latitude = results[0].geometry.location.lat();
         var longitude = results[0].geometry.location.lng();
         // sends those numbers to the database 
-        setDoc(doc(db, "genspots", streetaddress), {
+        setDoc(doc(db, "genspots", parkname), {
           lat: latitude,
           long: longitude,
-          name: streetaddress
+          name: parkname
         }).catch((error) => {
           console.log(error);
         });

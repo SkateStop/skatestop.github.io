@@ -9,12 +9,12 @@
 }
 
 #locationForm{
-  bottom: 15vh;
+  bottom: 12vh;
   right: 25vw;
 }
 
 #signupForm{
-  bottom: 23vh;
+  bottom: 20vh;
   right: 40vw;
 }
 
@@ -23,7 +23,7 @@
 }
 
 #loginForm{
-  bottom: 33vh;
+  bottom: 28vh;
   right: 40vw;
 }
 
