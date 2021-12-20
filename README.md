@@ -1,7 +1,7 @@
 # skatestop.github.io
 ## About The Project
 
-We created this project so that skaters around the country could be part of a community that shares different skating locaitons, so when they go places that they are unfamiliar with they can find the local skating spots and be apart of a new community.
+We created this project so that skaters around the country could be part of a community that shares multiple different skating locaitons around, so when they go places that they are unfamiliar with they can find the local skating spots and be apart of a new community of skaters.
 
 ## Attribuitons
 
