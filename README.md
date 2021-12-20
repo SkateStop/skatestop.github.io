@@ -1,4 +1,4 @@
 # skatestop.github.io
-Attribuitons:
-Location by Blair Adams from the Noun Project
-Skateboard by iconix user from the Noun Project
+Attribuitons:\n
+Location by Blair Adams from the Noun Project\n
+Skateboard by iconix user from the Noun Project\n
